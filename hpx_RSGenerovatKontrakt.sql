@@ -841,4 +841,35 @@ INSERT INTO #TempGenDok(
 	DECLARE @ID int, @ExtCisloZbozi nvarchar(40), @I int, @JeMaster bit 
 	SET @JeMaster=0 
 	DECLARE crPolKon CURSOR FAST_FORWARD LOCAL FOR 
-	  SELECT PZ.ID, LTRIM(PZ.Skup
+	  SELECT PZ.ID, LTRIM(PZ.SkupZbo)+LTRIM(PZ.RegCis) 
+		FROM TabPohybyZbozi PZ 
+		WHERE PZ.IDDoklad=@IDDokladCil AND NOT EXISTS(SELECT * FROM TabParPolKontr PPK WHERE PPK.IDPolozka=PZ.ID) 
+	OPEN crPolKon 
+	FETCH NEXT FROM crPolKon INTO @ID, @ExtCisloZbozi 
+	WHILE @@fetch_status=0 
+	  BEGIN 
+		SET @I=0 
+		WHILE EXISTS(SELECT * FROM TabParPolKontr WHERE IDDoklad=@IDDokladCil AND ExtCisloZbozi=@ExtCisloZbozi+CASE WHEN @I>0 THEN N'_'+convert(nvarchar(20),@I) ELSE '' END) 
+		  SET @I=@I+1 
+		INSERT INTO TabParPolKontr (IDPolozka, IDDoklad, M, ExtCisloZbozi)
+		VALUES (@ID, @IDDokladCil, @JeMaster, @ExtCisloZbozi+CASE WHEN @I>0 THEN N'_'+convert(nvarchar(20),@I) ELSE '' END) 
+		FETCH NEXT FROM crPolKon INTO @ID, @ExtCisloZbozi 
+	  END 
+	CLOSE crPolKon 
+	DEALLOCATE crPolKon
+
+	--nakonec vložit do TabParKontr hlavičku dokladu
+	DECLARE @CisloKontraktu NVARCHAR(10);
+	SET @CisloKontraktu=(SELECT RadaDokladu+CONVERT(NVARCHAR(7),PoradoveCislo) FROM TabDokladyZbozi WHERE ID=@IDDokladCil)
+	INSERT INTO TabParKontr (IDDoklad, M, ExtCisloKontraktu, DobaPrepravy, DruhPohybu_GenerDodListu, DruhPohybu_GenerPrijemek, DruhPohybu_GenerObjVyd, PrenasetCenyZKontrNaDodListy, GenerovatPuvodniNepotTermSNulovymMnoz, KontrolovatNasmlouvaneMnozstvi)
+	VALUES (@IDDokladCil,0,@CisloKontraktu,0,2,0,6,1,0,0)
+
+	-- konec akce v kurzoru CurGenDok
+FETCH NEXT FROM CurGenDok INTO @IDDokladZdroj, @RadaDokladuCil;
+	END;
+CLOSE CurGenDok;
+DEALLOCATE CurGenDok;
+
+END;
+GO
+
