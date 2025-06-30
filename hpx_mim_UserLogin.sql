@@ -1,0 +1,29 @@
+USE [RayService]
+GO
+
+/****** Object:  StoredProcedure [dbo].[hpx_mim_UserLogin]    Script Date: 30.06.2025 8:14:06 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[hpx_mim_UserLogin]
+@user NVARCHAR(128)
+AS
+IF OBJECT_ID(N'tempdb..#TabExtAkce','U')IS NOT NULL
+BEGIN
+    ALTER TABLE #TabExtAkce ADD SYS_KEY NVARCHAR(100)
+    ALTER TABLE #TabExtAkce ADD USER_KEY NVARCHAR(100)
+    ALTER TABLE #TabExtAkce ADD CONTENT NVARCHAR(1000)
+
+    CREATE TABLE #TabExtAkceInt (SYS_KEY NVARCHAR(100), USER_KEY NVARCHAR(100), CONTENT NVARCHAR(1000))
+	
+    INSERT INTO #TabExtAkceInt
+    SELECT 'VERZE', '', N'010115'
+	
+   INSERT INTO #TabExtAkce(SYS_KEY,USER_KEY,CONTENT)
+  SELECT * FROM #TabExtAkceInt
+END
+GO
+
