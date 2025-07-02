@@ -1,0 +1,18 @@
+USE [RayService]
+GO
+
+/****** Object:  Table [dbo].[Tabx_ASOL_JKO_PLUGININFOFORALLDB]    Script Date: 02.07.2025 8:23:25 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tabx_ASOL_JKO_PLUGININFOFORALLDB](
+	[DATABASEID] [int] NULL,
+	[NAZEVSYS] [nvarchar](60) NULL,
+	[NAZEVVEREJNY] [nvarchar](200) NULL,
+	[VERZEPLUGINU] [nvarchar](50) NULL
+) ON [PRIMARY]
+GO
+
