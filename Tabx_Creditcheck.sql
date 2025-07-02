@@ -1,0 +1,22 @@
+USE [RayService]
+GO
+
+/****** Object:  Table [dbo].[Tabx_Creditcheck]    Script Date: 02.07.2025 8:39:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tabx_Creditcheck](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[IDCc] [int] NULL,
+	[ICO] [nvarchar](20) NULL,
+	[Stav] [tinyint] NULL,
+ CONSTRAINT [PK__Tabx_Creditcheck__ID] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
