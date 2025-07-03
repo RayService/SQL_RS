@@ -1,0 +1,46 @@
+USE [HCvicna]
+GO
+
+/****** Object:  Trigger [dbo].[et_TabUkoly_ASOL_Log]    Script Date: 03.07.2025 8:25:07 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE  TRIGGER [dbo].[et_TabUkoly_ASOL_Log] ON [dbo].[TabUkoly]FOR INSERT, UPDATEASIF @@ROWCOUNT = 0 RETURNDECLARE @Akce CHARDECLARE @Ins INTDECLARE @Del INTDECLARE @IDZurnal INTDECLARE @Filtr BIT = 0SET NOCOUNT ONIF OBJECT_ID(N'tempdb..#TabUkoly_ASOL_NoLog') IS NOT NULLBEGINIF (SELECT COUNT(*) FROM #TabUkoly_ASOL_NoLog) = 0RETURNELSESET @Filtr = 1ENDELSECREATE TABLE #TabUkoly_ASOL_NoLog(ID INT)SELECT @Ins = COUNT(1) FROM INSERTEDSELECT @Del = COUNT(1) FROM DELETEDIF @Ins > 0 AND @Del = 0 SET @Akce = N'I'IF @Ins = 0 AND @Del > 0 SET @Akce = N'D'IF @Ins > 0 AND @Del > 0 SET @Akce = N'U'IF @Ins = 1 AND @Del = 0 AND (SELECT JeNovaVetaEditor FROM INSERTED) = 1RETURNIF @Ins = 0 AND @Del = 1 AND (SELECT JeNovaVetaEditor FROM DELETED) = 1RETURNIF @Ins = 1 AND (SELECT JeNovaVetaEditor FROM INSERTED) = 0 AND (SELECT JeNovaVetaEditor FROM DELETED) = 1SET @Akce = 'I'IF @Akce IN (N'I', N'D') OR UPDATE(DatumDokonceni) OR UPDATE(Resitel) OR UPDATE(TerminSplneni) OR UPDATE(TerminZahajeni) OR UPDATE(Zadavatel)BEGINEXEC hp_VratZurnalID @IDZurnal OUT
+
+IF @Akce IN (N'X',N'U')
+INSERT INTO TabZmenovyLOG(Tabulka, IDvTab, Sloupec, LogAkce, Old, New, IDZurnal) 
+SELECT N'TabUkoly', ISNULL(D.ID, I.ID), N'DatumDokonceni',  @Akce , CONVERT(NVARCHAR(255), D.DatumDokonceni, 20) , CONVERT(NVARCHAR(255), I.DatumDokonceni, 20) , @IDZurnal
+FROM DELETED AS D FULL JOIN INSERTED AS I ON D.ID = I.ID
+WHERE ((D.DatumDokonceni <> I.DatumDokonceni) OR (D.DatumDokonceni IS NULL AND I.DatumDokonceni IS NOT NULL ) OR (D.DatumDokonceni IS NOT NULL AND I.DatumDokonceni IS NULL ) OR @Akce = N'I')AND (@Filtr = 0 OR I.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog) OR D.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog))
+
+IF @Akce IN (N'X',N'U')
+INSERT INTO TabZmenovyLOG(Tabulka, IDvTab, Sloupec, LogAkce, Old, New, IDZurnal) 
+SELECT N'TabUkoly', ISNULL(D.ID, I.ID), N'Resitel',  @Akce , CONVERT(NVARCHAR(255), D.Resitel), CONVERT(NVARCHAR(255), I.Resitel) , @IDZurnal
+FROM DELETED AS D FULL JOIN INSERTED AS I ON D.ID = I.ID
+WHERE ((D.Resitel <> I.Resitel) OR (D.Resitel IS NULL AND I.Resitel IS NOT NULL ) OR (D.Resitel IS NOT NULL AND I.Resitel IS NULL ) OR @Akce = N'I')AND (@Filtr = 0 OR I.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog) OR D.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog))
+
+IF @Akce IN (N'X',N'U')
+INSERT INTO TabZmenovyLOG(Tabulka, IDvTab, Sloupec, LogAkce, Old, New, IDZurnal) 
+SELECT N'TabUkoly', ISNULL(D.ID, I.ID), N'TerminSplneni',  @Akce , CONVERT(NVARCHAR(255), D.TerminSplneni, 20) , CONVERT(NVARCHAR(255), I.TerminSplneni, 20) , @IDZurnal
+FROM DELETED AS D FULL JOIN INSERTED AS I ON D.ID = I.ID
+WHERE ((D.TerminSplneni <> I.TerminSplneni) OR (D.TerminSplneni IS NULL AND I.TerminSplneni IS NOT NULL ) OR (D.TerminSplneni IS NOT NULL AND I.TerminSplneni IS NULL ) OR @Akce = N'I')AND (@Filtr = 0 OR I.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog) OR D.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog))
+
+IF @Akce IN (N'X',N'U')
+INSERT INTO TabZmenovyLOG(Tabulka, IDvTab, Sloupec, LogAkce, Old, New, IDZurnal) 
+SELECT N'TabUkoly', ISNULL(D.ID, I.ID), N'TerminZahajeni',  @Akce , CONVERT(NVARCHAR(255), D.TerminZahajeni, 20) , CONVERT(NVARCHAR(255), I.TerminZahajeni, 20) , @IDZurnal
+FROM DELETED AS D FULL JOIN INSERTED AS I ON D.ID = I.ID
+WHERE ((D.TerminZahajeni <> I.TerminZahajeni) OR (D.TerminZahajeni IS NULL AND I.TerminZahajeni IS NOT NULL ) OR (D.TerminZahajeni IS NOT NULL AND I.TerminZahajeni IS NULL ) OR @Akce = N'I')AND (@Filtr = 0 OR I.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog) OR D.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog))
+
+IF @Akce IN (N'X',N'U')
+INSERT INTO TabZmenovyLOG(Tabulka, IDvTab, Sloupec, LogAkce, Old, New, IDZurnal) 
+SELECT N'TabUkoly', ISNULL(D.ID, I.ID), N'Zadavatel',  @Akce , CONVERT(NVARCHAR(255), D.Zadavatel), CONVERT(NVARCHAR(255), I.Zadavatel) , @IDZurnal
+FROM DELETED AS D FULL JOIN INSERTED AS I ON D.ID = I.ID
+WHERE ((D.Zadavatel <> I.Zadavatel) OR (D.Zadavatel IS NULL AND I.Zadavatel IS NOT NULL ) OR (D.Zadavatel IS NOT NULL AND I.Zadavatel IS NULL ) OR @Akce = N'I')AND (@Filtr = 0 OR I.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog) OR D.ID IN (SELECT ID FROM #TabUkoly_ASOL_NoLog))IF @Filtr = 0 AND OBJECT_ID(N'tempdb..#TabUkoly_ASOL_NoLog') IS NOT NULLDROP TABLE #TabUkoly_ASOL_NoLogEND
+GO
+
+ALTER TABLE [dbo].[TabUkoly] ENABLE TRIGGER [et_TabUkoly_ASOL_Log]
+GO
+
