@@ -1,0 +1,71 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_APSLogis_IN_RESOURCEMASTER]    Script Date: 03.07.2025 13:06:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_APSLogis_IN_RESOURCEMASTER] AS SELECT 
+  RESOURCE_NAME=CP.IDTabStrom+N'|'+CP.Pracoviste+N'|'+CS.Kod, 
+  RESOURCE_DESCRIPTION =CS.Nazev, 
+  LOCATION_ID =CP.IDTabStrom, 
+  IS_EXTERNAL=0, 
+  NUMBER_OF_RESOURCES=1, 
+  RESOURCE_TYPE=0, 
+  PARENT_RESOURCE_NAME=CP.IDTabStrom+N'|'+CP.Pracoviste, 
+  IDHeKey_Type=0, 
+  IDHeKey_TypeS=N'Stroje', 
+  IDHeKey=CS.ID 
+FROM TabCisStroju CS 
+  INNER JOIN TabCPraco CP ON (CP.ID=CS.IDPrac) 
+WHERE CP.Blokovano=0 AND CS.Blokovano=0 
+UNION ALL 
+SELECT 
+  RESOURCE_NAME=CP.IDTabStrom+N'|'+CP.Pracoviste, 
+  RESOURCE_DESCRIPTION =CP.Nazev, 
+  LOCATION_ID =CP.IDTabStrom, 
+  IS_EXTERNAL=0, 
+  NUMBER_OF_RESOURCES=1, 
+  RESOURCE_TYPE=0, 
+  PARENT_RESOURCE_NAME=NULL, 
+  IDHeKey_Type=1, 
+  IDHeKey_TypeS=N'Pracoviště', 
+  IDHeKey=CP.ID 
+FROM TabCPraco CP 
+WHERE CP.Blokovano=0 
+UNION ALL 
+SELECT 
+  RESOURCE_NAME=N'K_'+CK.Rada+N'|'+CK.kod, 
+  RESOURCE_DESCRIPTION =CK.Nazev, 
+  LOCATION_ID =CK.Rada+N'|'+CK.kod, 
+  IS_EXTERNAL=1, 
+  NUMBER_OF_RESOURCES=1, 
+  RESOURCE_TYPE=9, 
+  PARENT_RESOURCE_NAME=NULL, 
+  IDHeKey_Type=2, 
+  IDHeKey_TypeS=N'Kooperace', 
+  IDHeKey=CK.ID 
+FROM TabCKoop CK 
+WHERE CK.Blokovano=0 
+UNION ALL 
+SELECT 
+  RESOURCE_NAME=N'N_'+KZ.SkupZbo+N'|'+KZ.Regcis, 
+  RESOURCE_DESCRIPTION =KZ.Nazev1, 
+  LOCATION_ID=N'NÁŘADÍ', 
+  IS_EXTERNAL=0, 
+  NUMBER_OF_RESOURCES=1, 
+  RESOURCE_TYPE=0, 
+  PARENT_RESOURCE_NAME=NULL, 
+  IDHeKey_Type=4, 
+  IDHeKey_TypeS=N'Nářadí', 
+  IDHeKey=KZ.ID 
+FROM TabKmenZbozi KZ 
+  INNER JOIN TabSkupinyZbozi SZ ON (SZ.SkupZbo=KZ.SkupZbo) 
+  LEFT OUTER JOIN TabSkupinyZbozi_Ext SZ_E ON (SZ_E.ID=SZ.ID) 
+WHERE KZ.Naradi=1 AND KZ.Blokovano=0 AND 
+      SZ_E._EXT_RS_Logis=1 
+GO
+
