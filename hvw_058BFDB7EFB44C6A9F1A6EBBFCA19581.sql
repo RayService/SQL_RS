@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_058BFDB7EFB44C6A9F1A6EBBFCA19581]    Script Date: 03.07.2025 10:52:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_058BFDB7EFB44C6A9F1A6EBBFCA19581] AS SELECT * FROM Gatema_PohybUmisteni where idumisteni=52356
+GO
+
