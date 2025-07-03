@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_2EBE1BF4DCBC4051856E5321CE627617]    Script Date: 03.07.2025 11:04:03 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_2EBE1BF4DCBC4051856E5321CE627617] AS select  name from tabjazykyeshop
+GO
+
