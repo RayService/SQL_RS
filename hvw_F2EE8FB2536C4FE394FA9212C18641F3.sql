@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_F2EE8FB2536C4FE394FA9212C18641F3]    Script Date: 03.07.2025 14:47:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_F2EE8FB2536C4FE394FA9212C18641F3] AS select * from Saperta_Tab_Transakce
+GO
+
