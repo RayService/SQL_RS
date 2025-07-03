@@ -1,0 +1,18 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_APSLogis_IN_CUSTOMERMASTER]    Script Date: 03.07.2025 12:53:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_APSLogis_IN_CUSTOMERMASTER] AS SELECT 
+  CUSTOMER_ID =CO.CisloOrg, 
+  CUSTOMER_NAME =LEFT(CO.Firma,100), 
+  CUSTOMER_DESC =CO.Misto+N', '+CO.UliceSCisly 
+FROM TabCisOrg CO 
+WHERE CO.Stav=0 
+GO
+
