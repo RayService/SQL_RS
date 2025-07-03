@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_F4AB1DAAC2FB47E883448E25189C1AAF]    Script Date: 03.07.2025 14:48:13 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_F4AB1DAAC2FB47E883448E25189C1AAF] AS select * from tabciskonkurence
+GO
+
