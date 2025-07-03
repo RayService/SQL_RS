@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_0CAEF9EE2DFF4233B6489DAB2BD11A7A]    Script Date: 03.07.2025 10:53:53 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_0CAEF9EE2DFF4233B6489DAB2BD11A7A] AS SELECT*FROM Tabx_RS_duvody_snizeneho_hodnoceni
+GO
+
