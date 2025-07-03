@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_54E2DA2C5DCC4551B9DA46C5235EC6D0]    Script Date: 03.07.2025 11:10:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_54E2DA2C5DCC4551B9DA46C5235EC6D0] AS select * from dbo.hi_TabTopOdberatele
+GO
+
