@@ -1,0 +1,23 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_55F9F90514AC4B47B3FDC55BD4318586]    Script Date: 03.07.2025 11:10:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_55F9F90514AC4B47B3FDC55BD4318586] AS SELECT vcp.ID AS IDPohybVC,
+vcpe._EXT_poradovecisloEASA AS FORM1,
+vcs.ID AS IDVC,
+tpz.ID AS IDPohyb,
+tdz.ID AS IDDoklad
+FROM TabVyrCP_EXT vcpe WITH (NOLOCK)
+LEFT OUTER JOIN TabVyrCP vcp WITH (NOLOCK) ON vcp.ID=vcpe.ID
+LEFT OUTER JOIN TabVyrCS vcs WITH (NOLOCK) ON vcs.ID=vcp.IDVyrCis
+LEFT OUTER JOIN TabPohybyZbozi tpz WITH (NOLOCK) ON tpz.ID=vcp.IDPolozkaDokladu
+LEFT OUTER JOIN TabDokladyZbozi tdz WITH (NOLOCK) ON tdz.ID=tpz.IDDOklad
+WHERE vcpe._EXT_poradovecisloEASA IS NOT NULL
+GO
+
