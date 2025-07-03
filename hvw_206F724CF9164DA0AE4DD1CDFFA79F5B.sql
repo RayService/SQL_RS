@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_206F724CF9164DA0AE4DD1CDFFA79F5B]    Script Date: 03.07.2025 11:00:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_206F724CF9164DA0AE4DD1CDFFA79F5B] AS select * from e_properties_box
+GO
+
