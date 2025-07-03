@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_FDA512D37E3F44119EA6B4A2BB5028CB]    Script Date: 03.07.2025 14:52:51 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_FDA512D37E3F44119EA6B4A2BB5028CB] AS SELECT*FROM Tabx_RS_PlanovaniKapacitVypoctyTranspo
+GO
+
