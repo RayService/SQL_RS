@@ -1,0 +1,13 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_APSLogis_OUT_RESOURCELOAD]    Script Date: 03.07.2025 13:34:31 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_APSLogis_OUT_RESOURCELOAD] AS SELECT * FROM GTabAPSLogis_OUT_RESOURCELOAD
+GO
+
