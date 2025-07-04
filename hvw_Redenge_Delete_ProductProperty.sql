@@ -1,0 +1,14 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[hvw_Redenge_Delete_ProductProperty]    Script Date: 04.07.2025 7:38:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[hvw_Redenge_Delete_ProductProperty] AS 
+SELECT ID FROM Redenge_Helios_RedengeKit_Shop_Structures_ProductProperties_DeletedProductProperty
+GO
+
