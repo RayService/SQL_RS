@@ -1,0 +1,1 @@
+(CASE WHEN #TabPorPS.koop_P_Pl=0 THEN NULL ELSE ROUND(#TabPorPS.koop_P/(#TabPorPS.koop_P_Pl/100),0) END)  
