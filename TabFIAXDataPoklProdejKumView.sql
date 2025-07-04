@@ -1,0 +1,54 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[TabFIADataPoklProdejKumView]    Script Date: 04.07.2025 10:57:30 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[TabFIADataPoklProdejKumView]  --UPDATED 20130425
+AS 
+SELECT
+D.*, 
+DP.Nazev1 AS TabFIADataParam_Nazev1,
+DP.Nazev2 AS TabFIADataParam_Nazev2,
+Obd.Nazev AS TabObdobi_Nazev,
+Obdz.NazevObdobiZobrazeni AS TabFIAObdobiZobrazeni_NazevObdobiZobrazeni,
+Obdz.MesicOd_X AS TabFIAObdobiZobrazeni_MesicOd,
+Obdz.MesicDo_X AS TabFIAObdobiZobrazeni_MesicDo,
+O.Firma AS TabCisOrg_Firma,
+O.ICO AS TabCisOrg_ICO,
+S.Nazev AS TabStrom_Nazev,
+Zak.Nazev AS TabZakazka_Nazev,
+Zak.DruhyNazev AS TabZakazka_DruhyNazev,
+NakO.Nazev AS TabNakladovyOkruh_Nazev,
+Voz.SPZZobraz AS TabIVozidlo_SPZZobraz,
+Voz.Popis AS TabIVozidlo_Popis,
+Zam.CisloJmenoTituly AS TabCisZam_CisloJmenoTituly,
+Zam.PrijmeniJmeno AS TabCisZam_PrijmeniJmeno,
+Z.Nazev1 AS TabKmenZbozi_Nazev1,
+Z.Nazev2 AS TabKmenZbozi_Nazev2,
+Z.Nazev3 AS TabKmenZbozi_Nazev3,
+Z.Nazev4 AS TabKmenZbozi_Nazev4,
+Z.SKP AS TabKmenZbozi_SKP,
+D.SkupZbo + ' ' + D.Ucet_RegCis AS SkupZboRegCis,
+UR.Nazev AS TabUctenkaRada_Nazev
+FROM TabFIADataKum AS D
+LEFT OUTER JOIN TabFIADataParam AS DP ON DP.ID = D.IdFIADataParam
+LEFT OUTER JOIN TabObdobi AS Obd ON  Obd.ID = D.IdObdobi
+LEFT OUTER JOIN TabFIAObdobiZobrazeni AS ObdZ ON ObdZ.ID = D.IdObdobiZobrazeni
+LEFT OUTER JOIN TabCisOrg AS O ON O.CisloOrg = D.CisloOrg
+LEFT OUTER JOIN TabStrom AS S ON S.Cislo = D.Utvar
+LEFT OUTER JOIN TabZakazka AS Zak ON Zak.CisloZakazky = D.CisloZakazky
+LEFT OUTER JOIN TabNakladovyOkruh AS NakO ON NakO.Cislo = D.CisloNakladovyOkruh
+LEFT OUTER JOIN TabIVozidlo AS Voz ON Voz.ID = D.IdVozidlo
+LEFT OUTER JOIN TabCisZam AS Zam ON Zam.Cislo = D.CisloZam
+LEFT OUTER JOIN TabKmenZbozi AS Z ON Z.SkupZbo = D.SkupZbo AND Z.RegCis = D.Ucet_RegCis
+LEFT OUTER JOIN TabUctenkaRada AS UR ON UR.Cislo = D.Sbornik_RadaDokl
+  WHERE D.Typ = 5 
+AND(SUser_SName()IN(SELECT LoginName FROM TabFIAWarrantView WHERE TabFIAWarrantView.IdSkupina=D.IdFIADataParam 
+AND(NOT TabFIAWarrantView.ReadOnly=2)AND(TabFIAWarrantView.TableNr=6)))
+GO
+
