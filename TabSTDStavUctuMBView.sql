@@ -1,0 +1,79 @@
+USE [RayService]
+GO
+
+/****** Object:  View [dbo].[TabSTDStavUctuMBView]    Script Date: 04.07.2025 12:59:05 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[TabSTDStavUctuMBView]   --UPDATED 20230901
+AS
+SELECT 
+D.Stav, 
+D.OperaceStandard,
+D.IdStandard,
+D.IdStandardCislo,
+D.IdStandardOblast,
+D.IdObdobiVykazu,
+D.IdObdobiVykazuDetail,
+CONVERT(DATE,D.DatumPripad) AS DatumPripad,
+DATEPART(YEAR,D.DatumPripad) AS Rok,
+DATEPART(MONTH,D.DatumPripad) AS Mesic,
+DATEPART(QUARTER,D.DatumPripad) AS Ctvrt,
+CONVERT(INT,CEILING(DATEPART(QUARTER,D.DatumPripad)/2.0)) AS Polo,
+(CASE WHEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M)>=0 THEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+1)ELSE(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+(DATEDIFF(MONTH,O.ObdobiOd,O.ObdobiDo)+2))END)AS MesicFin,
+CASE (CASE WHEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M)>=0 THEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+1)ELSE(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+(DATEDIFF(MONTH,O.ObdobiOd,O.ObdobiDo)+2))END)
+WHEN 1 THEN 1 WHEN 2 THEN 1 WHEN 3 THEN 1 WHEN 4 THEN 2 WHEN 5 THEN 2 WHEN 6 THEN 2 WHEN 7 THEN 3 WHEN 8 THEN 3 WHEN 9 THEN 3 WHEN 10 THEN 4 WHEN 11 THEN 4 WHEN 12 THEN 4 ELSE 5 END AS CtvrtFin,
+CASE (CASE WHEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M)>=0 THEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+1)ELSE(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+(DATEDIFF(MONTH,O.ObdobiOd,O.ObdobiDo)+2))END)
+WHEN 1 THEN 1 WHEN 2 THEN 1 WHEN 3 THEN 1 WHEN 4 THEN 1 WHEN 5 THEN 1 WHEN 6 THEN 1 WHEN 7 THEN 2 WHEN 8 THEN 2 WHEN 9 THEN 2 WHEN 10 THEN 2 WHEN 11 THEN 2 WHEN 12 THEN 2 ELSE 3 END AS PoloFin,
+D.CisloUctu01 AS UcetStandard,
+D.CisloUcet AS VstupniUcet, 
+D.IdSegment,
+D.Utvar,
+D.CisloZakazky,
+D.CisloNakladovyOkruh,
+D.CisloOrg,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaMD) ELSE 0 END AS PocStavMD,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaDal) ELSE 0 END AS PocStavDal,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaZust) ELSE 0 END AS PocStav,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaMD) ELSE 0 END AS ObratMD,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaDal) ELSE 0 END AS ObratDal,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaZust) ELSE 0 END AS Obrat,
+SUM(CastkaMD) AS ZustatekMD,
+SUM(CastkaDal) AS ZustatekDal,
+SUM(CastkaZust) AS Zustatek,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaMenaMD) ELSE 0 END AS PocStavCMMD,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaMenaDal) ELSE 0 END AS PocStavCMDal,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaMenaZust) ELSE 0 END AS PocStavCM,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaMenaMD) ELSE 0 END AS ObratCMMD,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaMenaDal) ELSE 0 END AS ObratCMDal,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaMenaZust) ELSE 0 END AS ObratCM,
+SUM(D.CastkaMenaMD) AS ZustatekCMMD,
+SUM(D.CastkaMenaDal) AS ZustatekCMDal,
+SUM(D.CastkaMenaZust) AS ZustatekCM,
+Mena,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaMenaBMD) ELSE 0 END AS PocStavCMBMD,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaMenaBDal) ELSE 0 END AS PocStavCMBDal,
+CASE D.Stav WHEN 1 THEN SUM(D.CastkaMenaBZust) ELSE 0 END AS PocStavCMB,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaMenaBMD) ELSE 0 END AS ObratCMBMD,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaMenaBDal) ELSE 0 END AS ObratCMBDal,
+CASE D.Stav WHEN 0 THEN SUM(D.CastkaMenaBZust) ELSE 0 END AS ObratCMB,
+ISNULL(SUM(D.CastkaMenaBMD),0) AS ZustatekCMBMD,
+ISNULL(SUM(D.CastkaMenaBDal),0) AS ZustatekCMBDal,
+ISNULL(SUM(D.CastkaMenaBZust),0) AS ZustatekCMB,
+D.MenaB
+FROM TabSTDDenikStandardView AS D
+JOIN TabSTDObdobiVykazu AS O ON O.ID = D.IdObdobiVykazu
+GROUP BY D.OperaceStandard,D.IdStandard,D.IdStandardCislo,D.IdStandardOblast,D.IdObdobiVykazu,D.IdObdobiVykazuDetail, 
+CONVERT(DATE,D.DatumPripad),DATEPART(YEAR,D.DatumPripad),DATEPART(MONTH,D.DatumPripad),DATEPART(QUARTER,D.DatumPripad),CEILING(DATEPART(QUARTER,D.DatumPripad)/2.0),
+CASE D.Stav WHEN 0 THEN DATEPART(MONTH,D.DatumPripad) ELSE 0 END,
+D.Mena,D.MenaB,D.CisloUctu01,D.CisloUcet,D.Stav,D.IdSegment,D.Utvar,D.CisloZakazky,D.CisloNakladovyOkruh,D.CisloOrg,
+(CASE WHEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M)>=0 THEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+1)ELSE(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+(DATEDIFF(MONTH,O.ObdobiOd,O.ObdobiDo)+2))END),
+CASE (CASE WHEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M)>=0 THEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+1)ELSE(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+(DATEDIFF(MONTH,O.ObdobiOd,O.ObdobiDo)+2))END)
+WHEN 1 THEN 1 WHEN 2 THEN 1 WHEN 3 THEN 1 WHEN 4 THEN 2 WHEN 5 THEN 2 WHEN 6 THEN 2 WHEN 7 THEN 3 WHEN 8 THEN 3 WHEN 9 THEN 3 WHEN 10 THEN 4 WHEN 11 THEN 4 WHEN 12 THEN 4 END,
+CASE (CASE WHEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M)>=0 THEN(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+1)ELSE(DATEPART(MONTH,D.DatumPripad)-O.ObdobiOd_M+(DATEDIFF(MONTH,O.ObdobiOd,O.ObdobiDo)+2))END)
+WHEN 1 THEN 1 WHEN 2 THEN 1 WHEN 3 THEN 1 WHEN 4 THEN 1 WHEN 5 THEN 1 WHEN 6 THEN 1 WHEN 7 THEN 2 WHEN 8 THEN 2 WHEN 9 THEN 2 WHEN 10 THEN 2 WHEN 11 THEN 2 WHEN 12 THEN 2 ELSE 3 END
+GO
+
