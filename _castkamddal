@@ -1,0 +1,1 @@
+(select sum(isnull(td.castkamd,0)-isnull(td.castkadal,0)) from tabdenik td WITH(NOLOCK)    left outer join tabdenik_ext tde WITH(NOLOCK)  on tde.id=td.id  where  tde._sapidkmenzbozi=hvw_F0stavskladukedni.idkmenzbozi and  td.cisloucet=hvw_F0stavskladukedni.ucetzasob   and td.datumpripad_x<=hvw_F0stavskladukedni.datum and td.zaknihovano<>0 and td.stav in (0,1) )
