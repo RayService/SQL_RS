@@ -1,0 +1,1 @@
+CASE WHEN TabPrikazMzdyAZmetky.AutorZmetku is null THEN   (SELECT TabCisZam.PrijmeniJmeno from TabCisZam where  TabPrikazMzdyAZmetky.Zamestnanec=TabCisZam.ID   )   ELSE    (SELECT TabCisZam.PrijmeniJmeno from TabCisZam where  TabPrikazMzdyAZmetky.AutorZmetku=TabCisZam.ID)     END
