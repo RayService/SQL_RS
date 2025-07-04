@@ -1,0 +1,1 @@
+(SELECT PKZ.BlokovanoProVyrobu  FROM  TabParametryKmeneZbozi PKZ WITH(NOLOCK) WHERE TabKmenZbozi.ID=PKZ.IDKmenZbozi)  
