@@ -1,0 +1,1 @@
+(select TOP 1 DatumOvereni from dbo.TabAresOvereniHistorie H  inner join TabCisOrg O on O.ID = H.IDOrg  where O.ID = TabCisOrg.ID  order by H.DatumOvereni desc)
