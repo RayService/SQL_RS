@@ -1,0 +1,1 @@
+(select TOP 1 DatumSynchro from dbo.TabAresOvereniVypis V  inner join TabCisOrg O on O.ID = V.IDOrg  where O.ID = TabCisOrg.ID  order by DatumSynchro desc)
