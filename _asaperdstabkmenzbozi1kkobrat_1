@@ -1,0 +1,1 @@
+(select hodnota1 from asaperdatovysklad where iddimenze=tabkmenzbozi.id and  druh='kkobrat' and idaprevfa=1)
