@@ -1,0 +1,1 @@
+(  SELECT  tk.JNCelkem / (SELECT TOP 1 tl.Kurz  FROM TabKurzList tl WITH(NOLOCK)  WHERE tl.Mena='EUR'  ORDER BY tl.Datum DESC)  FROM TabKalkulace tk WITH(NOLOCK)  WHERE tk.ID=TabKalkulace.ID  )
