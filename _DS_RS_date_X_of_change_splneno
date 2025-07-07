@@ -1,0 +1,1 @@
+(  SELECT TOP 1 tzlog.Datum_X  FROM TabZmenovyLog tzlog WITH(NOLOCK)  LEFT OUTER JOIN TabPrPostup tpp WITH(NOLOCK) ON tpp.ID = tzlog.IDvTab  WHERE (((tzlog.Tabulka=N'TabPrPostup' OR tzlog.Tabulka=N'TabPrPostup_EXT') AND tzlog.IDvTab=TabPrPostup.ID) AND (tzlog.Sloupec LIKE N'ZaevidovaneKusyAll%') AND (tzlog.New >= tpp.Kusy_zad) AND (tpp.Splneno = 1))  ORDER BY tzlog.Datum DESC  )
