@@ -1,0 +1,1 @@
+(  SELECT ISNULL(kve._DatZajMat,kve._EXT_RS_DatZajMatOdhad)  FROM TabPlanPrKVazby kv WITH(NOLOCK)  LEFT OUTER JOIN TabPlanPrKVazby_EXT kve WITH(NOLOCK) ON kve.ID=kv.ID  WHERE kv.ID=TabPlanPrKVazby.ID  )
