@@ -1,0 +1,1 @@
+(  SELECT ISNULL(tss.Mnozstvi,0)  FROM TabStavSkladu tss WITH(NOLOCK)  LEFT OUTER JOIN TabPrKVazby tpkv WITH(NOLOCK) ON tpkv.nizsi = tss.IDKmenZbozi AND tpkv.IDOdchylkyDo IS NULL  WHERE tss.IDSklad = '100' AND tpkv.ID = TabPrKVazby.ID  )
