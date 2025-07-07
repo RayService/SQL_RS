@@ -1,0 +1,1 @@
+(  SELECT ISNULL(tss.Prumer,0)*ISNULL(matpol.MnoZad,0)  FROM hvw_8B36A3CEFE994866BC19631BEA2E8D6E matpol WITH(NOLOCK)  LEFT OUTER JOIN TabStavSkladu tss WITH(NOLOCK) ON tss.IDKmenZbozi=matpol.ID_nizsi AND tss.IDSklad=matpol.CisloSklad  WHERE matpol.ID= hvw_8B36A3CEFE994866BC19631BEA2E8D6E.ID  )
