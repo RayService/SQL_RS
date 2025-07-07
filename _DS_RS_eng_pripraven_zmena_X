@@ -1,0 +1,1 @@
+(  SELECT TOP 1 CONVERT(DATETIME,CONVERT(INT,CONVERT(FLOAT,[Datum])))  FROM TabZmenovyLOG tzl WITH(NOLOCK)  LEFT OUTER JOIN TabZurnal tz WITH(NOLOCK) ON tzl.IdZurnal=tz.ID  WHERE(((((tzl.Tabulka=N'TabPlan' OR tzl.Tabulka=N'TabPlan_EXT') AND tzl.IDvTab=TabPlan.ID)))AND(tzl.Sloupec LIKE N'%_EngPrip%')AND(New='1'))  ORDER BY Datum DESC  )
