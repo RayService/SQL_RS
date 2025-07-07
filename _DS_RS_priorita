@@ -1,0 +1,1 @@
+(  SELECT pr.Nazev  FROM TabPersZnalostiCis dov WITH (NOLOCK)  LEFT OUTER JOIN TabPersZnalostiCis_EXT dove WITH (NOLOCK) ON dove.ID=dov.ID  LEFT OUTER JOIN TabPersZnalostiPrioritaCis pr WITH (NOLOCK) ON pr.ID=dove._EXT_RE_priorita_dovednosti  WHERE dov.ID=TabPersZnalostiCis.ID  )
