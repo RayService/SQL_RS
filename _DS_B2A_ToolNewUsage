@@ -1,0 +1,1 @@
+(  SELECT     CASE WHEN COUNT(ID) > 0 THEN 1 ELSE 0 END    FROM B2A_TermETH_ToolUsage_EXT WITH(NOLOCK)    WHERE     ToolNewLink = 1 AND     IDProductionOrder =  TabPrikaz.ID  )
