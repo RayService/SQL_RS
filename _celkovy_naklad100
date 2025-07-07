@@ -1,0 +1,1 @@
+(SELECT CASE WHEN TabDokladyZbozi.ECSNCelkemdokldruh<>0 THEN   (TabDokladyZbozi.ECSNCelkemdokldruh) * 1.3 ELSE 0 END)
