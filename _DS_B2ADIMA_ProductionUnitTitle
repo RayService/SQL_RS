@@ -1,0 +1,1 @@
+(  SELECT Nazev  FROM TabStrom WITH(NOLOCK)  WHERE Id = (SELECT _EXT_B2ADIMA_ProductionUnitId   FROM TabCisZam_EXT  WITH(NOLOCK)  WHERE TabCisZam_EXT.ID = TabCisZam.ID)   )
