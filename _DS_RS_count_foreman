@@ -1,0 +1,1 @@
+(  SELECT COUNT(tcz.ID)  FROM TabCPraco tcpo WITH(NOLOCK)  LEFT OUTER JOIN TabCisZam_EXT tcze WITH(NOLOCK) ON tcze._EXT_RS_workplace_IDWorkplace=tcpo.ID  JOIN TabCisZam tcz WITH(NOLOCK) ON tcz.ID=tcze.ID  WHERE tcpo.ID=TabCPraco.ID  )
