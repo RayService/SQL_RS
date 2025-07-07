@@ -1,0 +1,1 @@
+(  SELECT  tppkv.mnoz_zad * (SELECT _EXT_RS_material_time FROM TabKmenZbozi_EXT WHERE TabKmenZbozi_EXT.ID=tkz.ID) / 60  FROM TabPlanPrKVazby tppkv  JOIN TabKmenZbozi tkz WITH(NOLOCK) ON tkz.ID = tppkv.nizsi  WHERE tppkv.ID = TabPlanPrKVazby.ID  )
