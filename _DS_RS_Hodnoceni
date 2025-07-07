@@ -1,0 +1,1 @@
+(  SELECT ISNULL(rat.Status,0)  FROM Tabx_RAY_EmployeeRating_RatingItem rit  RIGHT JOIN Tabx_RAY_EmployeeRating_Rating rat ON rat.ID=rit.IDRating  WHERE rit.IDWagePart=TabPredzp.ID  )
