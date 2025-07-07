@@ -1,0 +1,1 @@
+(  SELECT tk.Spojeni  FROM TabZamMzd mzd WITH(NOLOCK)  LEFT OUTER JOIN TabCisZam tcz WITH(NOLOCK) ON tcz.ID=mzd.ZamestnanecId  LEFT OUTER JOIN TabKontakty tk WITH(NOLOCK) ON tcz.ID=tk.IDCisZam AND tk.Prednastaveno=1 AND tk.Druh = 10  WHERE mzd.ID=TabZamMzd.ID  )
