@@ -1,0 +1,1 @@
+(  SELECT  tmt.Nazev  FROM TabZamMzd tzm WITH(NOLOCK)   LEFT OUTER JOIN TabMzdTar tmt WITH(NOLOCK) ON tmt.Odstavec = tzm.Odstavec AND tmt.Trida = tzm.PlatovaTrida AND tmt.Stupen = tzm.PlatovyStupen AND tmt.DruhMzdy = tzm.DruhMzdyMesHod AND tmt.IdObdobi = tzm.IdObdobi  WHERE  tzm.IdObdobi=:__IDMZDOBD AND tzm.DruhMzdyMesHod = 0 AND tzm.ID = TabZamMzd.ID  )
