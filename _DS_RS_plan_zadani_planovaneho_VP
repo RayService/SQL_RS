@@ -1,0 +1,1 @@
+(  SELECT TOP 1 tplp.Plan_zadani_X  FROM TabPlanPrikaz tplp WITH(NOLOCK)  LEFT OUTER JOIN TabPlan tp WITH (NOLOCK) ON tp.ID=tplp.IDPlan  WHERE tp.ID=TabPlan.ID  ORDER BY tplp.Plan_zadani_X DESC  )
