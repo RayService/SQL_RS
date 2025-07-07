@@ -1,0 +1,1 @@
+(select (SUBSTRING(REPLACE(SUBSTRING(TabExtHlasky.[Hlaska],1,255),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,255)) from TabExtHlasky WITH(NOLOCK) where (TabUzivAtr.ExtEd_Zalozka = TabExtHlasky.GUIDText and TabExtHlasky.Jazyk = 1))
