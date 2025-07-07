@@ -1,0 +1,1 @@
+DATEDIFF(day, TabDokladyZbozi.DatPorizeni_X, TabDokladyZbozi.TerminDodavkyDat_X)
