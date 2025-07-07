@@ -1,0 +1,1 @@
+cast((case when hvw_Basaperrskladkedni.mnozstvikedni>(select maximum from tabstavskladu ts  WITH(NOLOCK)  where ts.id=hvw_Basaperrskladkedni.idzbosklad) then 1 else 0 end) as bit)
