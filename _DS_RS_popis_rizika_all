@@ -1,0 +1,1 @@
+(  SELECT tcoe._popis_rizika  FROM TabCisOrg_EXT tcoe WITH(NOLOCK) WHERE tcoe.ID=TabCisOrg.ID  )
