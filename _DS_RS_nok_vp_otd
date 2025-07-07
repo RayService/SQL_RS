@@ -1,0 +1,1 @@
+(  CAST (CASE WHEN EXISTS    (SELECT tp.ID  FROM TabPrikaz tp WITH(NOLOCK)  LEFT OUTER JOIN TabPlan tpl WITH(NOLOCK) ON tpl.ID = tp.IDPlan  WHERE tp.ID = TabPrikaz.ID AND tpl.datum_X>=tp.ukonceni_X) THEN 1 ELSE 0 END AS BIT)  )
