@@ -1,0 +1,1 @@
+(  SELECT tpze._EXT_RS_JCPredSlevouKC-tpz.JCbezDaniKC  FROM TabPohybyZbozi tpz WITH(NOLOCK)  LEFT OUTER JOIN TabPohybyZbozi_EXT tpze WITH(NOLOCK) ON tpze.ID=tpz.ID  WHERE tpz.ID=TabPohybyZbozi.ID  )
