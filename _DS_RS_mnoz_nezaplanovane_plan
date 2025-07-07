@@ -1,0 +1,1 @@
+(  SELECT SUM(tp.mnozNeprev)  FROM TabPlan tp WITH(NOLOCK)  JOIN TabKmenZbozi tkz WITH(NOLOCK) ON tkz.ID = tp.IDTabKmen  WHERE ((tp.Rada=N'Plan_quick')OR(tp.Rada=N'Plan_fix')OR(tp.Rada=N'P_RO')OR(tp.Rada=N'P_RO_povrz')) AND tkz.ID = TabStavSkladu.IDKmenZbozi  )  
