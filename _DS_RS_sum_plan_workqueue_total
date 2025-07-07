@@ -1,0 +1,1 @@
+(  SELECT  ISNULL(SUM((planpp.Kusy_zad * planpp.TAC_S / (3600.0 * planpp.DavkaTPV_VO))+planpp.TBC_H),0)  FROM TabPlanPrPostup planpp WITH(NOLOCK)  LEFT OUTER JOIN TabPlanPrikaz planp WITH(NOLOCK) ON planpp.IDPlanPrikaz=planp.ID  WHERE planpp.pracoviste=TabCPraco.ID  )
