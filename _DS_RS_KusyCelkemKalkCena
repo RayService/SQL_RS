@@ -1,0 +1,1 @@
+(  SELECT tp.kusy_zad * tzk.Celkem  FROM TabPrikaz tp WITH(NOLOCK)    LEFT OUTER JOIN TabZKalkulace tzk WITH(NOLOCK) ON tp.IDTabKmen=tzk.Dilec AND tzk.ZmenaDo IS NULL  WHERE tp.ID=TabPrikaz.ID  )
