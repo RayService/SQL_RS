@@ -1,0 +1,1 @@
+(  SELECT AVG(tpz.JCbezDaniKC)  FROM Tabx_RS_OUT_MANUFACTURINGORDERKAMING kam  LEFT OUTER JOIN TabPohybyZbozi tpz ON kam.IDPohybu=tpz.ID  WHERE kam.IDPrikaz=TabPrikaz.ID  )
