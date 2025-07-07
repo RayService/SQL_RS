@@ -1,0 +1,1 @@
+(  SELECT SUBSTRING(REPLACE(SUBSTRING(TabPrikaz_EXT.[_EXT_RS_vyrobni_poznamka],1,255),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,255)  FROM TabPrikaz_EXT WITH(NOLOCK)  JOIN TabPrikaz ts WITH(NOLOCK) ON ts.ID = TabPrikaz_EXT.ID  WHERE ts.ID = TabPrikaz.ID  )
