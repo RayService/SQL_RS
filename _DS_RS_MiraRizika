@@ -1,0 +1,1 @@
+(  SELECT ISNULL(_EXT_RS_VahaDopadRizika,0)*ISNULL(_EXT_RS_PravdepodobnostRizika,0)  FROM TabQMSAuditOtazky QA WITH(NOLOCK)  LEFT OUTER JOIN TabQMSAuditOtazky_EXT QAE WITH(NOLOCK) ON QAE.ID=QA.ID  WHERE QA.ID=TabQMSAuditOtazky.ID  ) 
