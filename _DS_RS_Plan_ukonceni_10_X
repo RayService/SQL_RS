@@ -1,0 +1,1 @@
+(CONVERT(DATETIME,CONVERT(INT,CONVERT(FLOAT,TabPrikaz.Plan_ukonceni)))-10)
