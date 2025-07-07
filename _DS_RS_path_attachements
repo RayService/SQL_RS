@@ -1,0 +1,1 @@
+(  SELECT SUBSTRING(REPLACE(SUBSTRING(tdze.[_EXT_RS_path_attachements],1,255),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,255)  FROM TabDokladyZbozi_EXT tdze WITH(NOLOCK)  WHERE tdze.ID=TabDokladyZbozi.ID  )
