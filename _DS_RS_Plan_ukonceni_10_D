@@ -1,0 +1,1 @@
+(DATEPART(DAY,TabPrikaz.Plan_ukonceni-10))
