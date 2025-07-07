@@ -1,0 +1,1 @@
+(SELECT  SUBSTRING(REPLACE(SUBSTRING(TabKontaktJednani_EXT._DuvodHod,1,255),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,255)  FROM TabKontaktJednani_EXT WITH(NOLOCK)  WHERE TabKontaktJednani_EXT.ID=TabKontaktJednani.ID  )
