@@ -1,0 +1,1 @@
+(  SELECT CONVERT(DATETIME,CONVERT(INT,CONVERT(FLOAT,tpze._SkutDatKon)))  FROM TabPohybyZbozi_EXT tpze WITH (NOLOCK)  WHERE tpze.ID=TabPohybyZbozi.ID  )
