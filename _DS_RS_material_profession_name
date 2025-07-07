@@ -1,0 +1,1 @@
+(  SELECT Profese  FROM TabVyrProfese tvp WITH(NOLOCK)  WHERE ID = (SELECT _EXT_RS_material_profession  FROM TabKmenZbozi_EXT WITH(NOLOCK)  WHERE TabKmenZbozi_EXT.ID = TabKmenZbozi.ID  )  )  
