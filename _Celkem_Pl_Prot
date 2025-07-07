@@ -1,0 +1,1 @@
+(SELECT ((mzda_Pl*5*2.5) +(mat*1) + (koop*1) + (NespecNakl*1)) FROM #TabPorPS PPS WHERE PPS.ID = #TabPorPS.ID)
