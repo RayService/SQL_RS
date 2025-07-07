@@ -1,0 +1,1 @@
+(  SELECT  SUBSTRING(REPLACE(SUBSTRING(tpe._EXT_RS_kontrola_operace,1,255),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,255)  FROM TabPrPostup_EXT tpe WITH(NOLOCK)  WHERE tpe.ID=TabPrPostup.ID  )
