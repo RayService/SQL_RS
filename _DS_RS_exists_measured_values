@@ -1,0 +1,1 @@
+(  CAST (CASE WHEN EXISTS    (SELECT p.ID      FROM TabPrPostup p WITH(NOLOCK)      JOIN B2A_MeasuredValueDefinition_ProductionOrderOperation mvpop WITH(NOLOCK) ON (mvpop.IDProductionOrder = p.IDPrikaz AND mvpop.DocNum = p.Doklad)      JOIN B2A_MeasuredValueDefinition mvd WITH(NOLOCK) ON mvd.ID = mvpop.IDDefinition      WHERE p.ID = TabPrPostup.ID) THEN 1 ELSE 0 END AS BIT)  )
