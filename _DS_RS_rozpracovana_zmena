@@ -1,0 +1,1 @@
+(SELECT TOP 1 RTRIM(CZ.rada)+N'-'+CZ.CisZmeny  FROM TabKmenZbozi KZ WITH(NOLOCK)  INNER JOIN TabDavka D WITH(NOLOCK) ON (D.IDDilce=KZ.IDKusovnik AND D.IDZakazModif IS NULL AND D.ZmenaDo IS NULL)  INNER JOIN TabCZmeny CZ WITH(NOLOCK) ON (CZ.ID=D.zmenaOd AND CZ.platnost=0)   WHERE KZ.ID=TabParKmZ.IDKmenZbozi)
