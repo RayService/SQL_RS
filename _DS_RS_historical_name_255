@@ -1,0 +1,1 @@
+(  SELECT SUBSTRING(REPLACE(SUBSTRING(TabStrom_EXT.[_EXT_RS_historical_name],1,255),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,255)  FROM TabStrom_EXT WITH(NOLOCK)  JOIN TabStrom ts WITH(NOLOCK) ON ts.ID = TabStrom_EXT.ID  WHERE ts.ID = TabStrom.ID  )
