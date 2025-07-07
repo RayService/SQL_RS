@@ -1,0 +1,1 @@
+(  SELECT (ISNULL(tpe._PocPrac200,0) * 40 * 0.82)  FROM TabPlan_EXT tpe WITH(NOLOCK)  WHERE tpe.ID = TabPlan.ID  )
