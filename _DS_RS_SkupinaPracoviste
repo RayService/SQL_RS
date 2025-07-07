@@ -1,0 +1,1 @@
+(  SELECT ISNULL(kap.SkupinaPracoviste,tco.Pracoviste)  FROM Tabx_RS_PrehledKapacitRS kap  LEFT OUTER JOIN TabCPraco tco ON tco.ID=kap.IDPracoviste  WHERE kap.ID=hvw_Tabx_RS_PrehledKapacitRS.ID  )
