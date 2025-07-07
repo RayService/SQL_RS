@@ -1,0 +1,1 @@
+(  CAST (CASE WHEN EXISTS (  SELECT TOP 1 tkzADC.ID  FROM RayService..TabKmenZbozi tkzRS WITH(NOLOCK)  JOIN RayService6..TabKmenZbozi_EXT tkzADCe WITH(NOLOCK) ON tkzADCe._EXT_ADC_IDKmenRS=tkzRS.ID  JOIN RayService6..TabKmenZbozi tkzADC WITH(NOLOCK) ON tkzADC.ID=tkzADCe.ID  WHERE tkzRS.ID=TabKmenZbozi.ID)  THEN 1 ELSE 0 END AS BIT)  )
