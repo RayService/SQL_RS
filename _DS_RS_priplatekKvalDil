@@ -1,0 +1,1 @@
+(  SELECT tpmz.Mzda*((CASE tkze._KvalDil   WHEN 'A' THEN 20   WHEN 'B' THEN 15   WHEN 'C' THEN 10   WHEN 'E' THEN 20   END))/100  FROM TabPrikazMzdyAZmetky tpmz WITH(NOLOCK)  LEFT OUTER JOIN TabKmenZbozi tkz WITH(NOLOCK) ON tpmz.IDTabKmen=tkz.ID  LEFT OUTER JOIN TabKmenZbozi_EXT tkze WITH(NOLOCK) ON tkze.ID=tkz.ID  WHERE tpmz.ID=TabPrikazMzdyAZmetky.ID  )
