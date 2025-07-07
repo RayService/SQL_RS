@@ -1,0 +1,1 @@
+(CAST (CASE WHEN EXISTS(  SELECT tp.ID  FROM TabPrKVazby tprkv WITH(NOLOCK)  LEFT OUTER JOIN TabPostup tp WITH(NOLOCK) ON tp.dilec = tprkv.nizsi AND tp.ZmenaDo IS NULL  WHERE  ((tprkv.IDOdchylkyDo IS NULL)AND((tprkv.IDPrikaz=TabPrikaz.ID))AND(tprkv.prednastaveno=1)AND (tp.typ=2))  ) THEN 1   ELSE 0 END AS BIT))
