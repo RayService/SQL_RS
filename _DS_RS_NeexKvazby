@@ -1,0 +1,1 @@
+(  CAST (CASE WHEN EXISTS(  SELECT tkz.ID  FROM TabKmenZbozi tkz WITH(NOLOCK)  LEFT OUTER JOIN TabKvazby tkv WITH(NOLOCK) ON tkz.ID=tkv.vyssi AND tkv.ZmenaDo IS NULL  WHERE tkv.ID IS NULL AND tkz.ID=TabKmenZbozi.ID) THEN 1 ELSE 0 END AS BIT)  )
