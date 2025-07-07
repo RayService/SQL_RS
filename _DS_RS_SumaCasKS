@@ -1,0 +1,1 @@
+(  SELECT  ISNULL(SUM(tp.mnozstvi * tppp.TAC_H),0)  FROM TabPlan tp WITH(NOLOCK)  LEFT OUTER JOIN TabPlanPrikaz tpp WITH(NOLOCK) ON tpp.IDPlan = tp.ID  LEFT OUTER JOIN TabPlanPrPostup tppp WITH(NOLOCK) ON tppp.IDPlanPrikaz = tpp.ID  WHERE tppp.nazev='TP - Příprava materiálu KS' AND tp.ID=TabPlan.ID  )
