@@ -1,0 +1,1 @@
+(  SELECT ISNULL(SUM(tpmaz.Mzda),0)  FROM TabPrikazMzdyAZmetky tpmaz WITH(NOLOCK)  JOIN TabPrikazMzdyAZmetky_EXT tpmaze WITH(NOLOCK) ON tpmaze.ID=tpmaz.ID  LEFT OUTER JOIN TabPersVyberRizeni tpvr WITH(NOLOCK) ON tpvr.ID=tpmaze._EXT_RS_vyberove_rizeni  WHERE tpvr.ID=TabPersVyberRizeni.ID  )
