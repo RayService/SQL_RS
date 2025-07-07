@@ -1,0 +1,1 @@
+GetDate() + (SELECT DodaciLhuta FROM TabKmenZbozi U WHERE U.ID=TabPlan.IDTabKmen)
