@@ -1,0 +1,1 @@
+(SELECT  (CASE WHEN _Creditcheck_Stav IS NULL THEN NULL  WHEN _Creditcheck_Stav = 1 THEN 73  WHEN _Creditcheck_Stav = 2 THEN 76  WHEN _Creditcheck_Stav = 3 THEN 75  WHEN _Creditcheck_Stav = 4 THEN 74  ELSE NULL END)  FROM (SELECT((SELECT _Creditcheck_Stav FROM TabCisOrg_EXT WHERE ID=TabCisOrg.ID)) AS _Creditcheck_Stav) T)
