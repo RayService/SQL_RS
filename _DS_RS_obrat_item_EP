@@ -1,0 +1,1 @@
+(  SELECT (TP.mnozstvi * PZ.JCBezDaniKC)  FROM TabPlan TP WITH(NOLOCK)  JOIN TabPohybyZbozi PZ WITH(NOLOCK) ON TP.IDRezervace = PZ.ID  JOIN TabDokladyZbozi TD WITH(NOLOCK) ON TD.ID = PZ.IDDoklad  WHERE TP.ID = TabPlan.ID-- AND TD.DruhPohybuZbo = 9  )
