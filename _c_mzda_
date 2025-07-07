@@ -1,0 +1,1 @@
+(CASE WHEN hvw_HodnoceniZakazek.Mzda_P_Pl=0 THEN NULL ELSE ROUND(hvw_HodnoceniZakazek.Mzda_P  /(hvw_HodnoceniZakazek.Mzda_P_Pl/100),0) END)  
