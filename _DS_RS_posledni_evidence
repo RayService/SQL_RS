@@ -1,0 +1,1 @@
+(  SELECT TOP 1 tpmz.datum  FROM TabPrikazMzdyAZmetky tpmz WITH(NOLOCK)  WHERE tpmz.IDPrikaz=TabPrikaz.ID  ORDER BY tpmz.datum DESC  )
