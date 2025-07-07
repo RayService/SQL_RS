@@ -1,0 +1,1 @@
+(  CASE  WHEN ((#TabPorPS.Celkem_Pl+#TabPorPS.NespecNakl)/#TabPorPS.Celkem)*100 >= 95 THEN 1  WHEN ((#TabPorPS.Celkem_Pl+#TabPorPS.NespecNakl)/#TabPorPS.Celkem)*100 < 95 THEN 0  WHEN (SELECT Celkem FROM #TabPorPS PPS WHERE PPS.ID= #TabPorPS.ID) = 0 THEN NULL  ELSE  NULL  END  )
