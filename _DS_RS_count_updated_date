@@ -1,0 +1,1 @@
+(  SELECT COUNT(tzlog.IdZurnal)  FROM TabZmenovyLog tzlog WITH(NOLOCK)  WHERE tzlog.IDvTab = TabPrikaz.ID AND tzlog.Tabulka=N'TabPrikaz' AND tzlog.Sloupec LIKE N'Plan_ukonceni%'  )
