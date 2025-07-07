@@ -1,0 +1,1 @@
+(  SELECT CASE ISNULL(tpe._EXT_RS_PrioritaFAI,0) WHEN 1 THEN ISNULL(tpe._fair2,0) ELSE ISNULL(tpe._EXT_RS_NepozadovanFAIR_LPP,0) END  FROM TabPrikaz tp WITH(NOLOCK)  LEFT OUTER JOIN TabPrikaz_EXT tpe WITH(NOLOCK) ON tpe.ID=tp.ID  WHERE tp.ID=TabPrikaz.ID  )
