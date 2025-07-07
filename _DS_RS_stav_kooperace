@@ -1,0 +1,1 @@
+(  SELECT ISNULL(SUM(tpmz.kusy_odv),0)  FROM TabPrikazMzdyAZmetky tpmz WITH(NOLOCK)  LEFT OUTER JOIN TabStavSkladu tss WITH(NOLOCK) ON tss.IDKmenZbozi = tpmz.IDTabKmen AND tss.IDSklad = :__SKLAD  WHERE tpmz.Stav = 0 AND tpmz.TypMzdy = 2 AND tss.ID = TabStavSkladu.ID  )
