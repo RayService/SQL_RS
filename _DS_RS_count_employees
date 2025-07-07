@@ -1,0 +1,1 @@
+(  SELECT COUNT(tcz.ID)  FROM TabPersVyberRizeni tpvr WITH(NOLOCK)  LEFT OUTER JOIN TabPersVyberRizeniZamestnanec tpvrz WITH(NOLOCK) ON tpvrz.VyberRizeniId = tpvr.ID   LEFT OUTER JOIN TabCisZam tcz WITH(NOLOCK) ON tcz.ID = tpvrz.ZamestnanecID  WHERE tpvr.ID = TabPersVyberRizeni.ID  )
