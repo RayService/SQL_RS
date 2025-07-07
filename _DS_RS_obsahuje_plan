@@ -1,0 +1,1 @@
+(  CAST (CASE WHEN EXISTS  (SELECT tpkj.ID  FROM TabPoznKontJed tpkj WITH(NOLOCK)  WHERE tpkj.IDKontJednani=TabKontaktJednani.ID)  THEN 1 ELSE 0 END AS BIT)  )
