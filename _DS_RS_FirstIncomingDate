@@ -1,0 +1,1 @@
+(  SELECT TOP 1 DZ.DatPorizeniSkut  FROM TabPohybyZbozi PZ WITH(NOLOCK)  LEFT OUTER JOIN TabDokladyZbozi DZ WITH(NOLOCK) ON DZ.ID=PZ.IDDoklad  WHERE PZ.druhPohybuZbo=0 AND PZ.TypVyrobnihoDokladu=0 AND PZ.IDPrikaz=TabPrikaz.ID  ORDER BY DZ.DatPorizeniSkut ASC  )
