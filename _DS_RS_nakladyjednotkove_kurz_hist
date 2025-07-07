@@ -1,0 +1,1 @@
+(  SELECT  tk.JNCelkem / (SELECT TOP 1 tl.Kurz  FROM TabKurzList tl WITH(NOLOCK)  WHERE tl.Mena='EUR'  ORDER BY tl.Datum DESC)  FROM Tabx_RS_TabKalkulaceHist tk WITH(NOLOCK)  WHERE tk.ID=hvw_C27C244AEC874A9FA742D76D8B709779.ID  )
