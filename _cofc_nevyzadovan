@@ -1,0 +1,1 @@
+(  SELECT TOP 1 PZ_E._cofc_nevyzadovan  FROM TabPohybyZbozi PZ WITH(NOLOCK)  LEFT OUTER JOIN TabPohybyZbozi_EXT PZ_E WITH(NOLOCK) ON PZ_E.ID=PZ.ID  INNER JOIN TabDokladyZbozi DZ WITH(NOLOCK) ON DZ.ID=PZ.IDDoklad  WHERE DZ.Realizovano=1 AND DZ.DruhPohybuZbo=0 AND PZ.IDZboSklad=TabVyrCS.IDStavSkladu  ORDER BY DZ.DatRealizace ASC  )
