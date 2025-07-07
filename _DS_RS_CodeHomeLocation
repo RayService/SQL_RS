@@ -1,0 +1,1 @@
+(  SELECT tu.Kod  FROM TabKmenZbozi_EXT tkze WITH(NOLOCK)  LEFT OUTER JOIN TabUmisteni tu WITH(NOLOCK) ON tu.ID=tkze._EXT_RS_home_location  WHERE tkze.ID=TabKmenZbozi.ID  )
