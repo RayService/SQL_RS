@@ -1,0 +1,1 @@
+(  SELECT SUM(tssADC.Mnozstvi)  FROM RayService6..TabStavSkladu tssADC WITH(NOLOCK)  LEFT OUTER JOIN RayService6..TabKmenZbozi_EXT tkze WITH(NOLOCK) ON tkze.ID=tssADC.IDKmenZbozi AND tssADC.IDSklad='100'  LEFT OUTER JOIN RayService..TabKmenZbozi tkz WITH(NOLOCK) ON tkz.ID=tkze._EXT_ADC_IDKmenRS  WHERE tkz.ID=TabKmenZbozi.ID  )
