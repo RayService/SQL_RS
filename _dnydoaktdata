@@ -1,0 +1,1 @@
+datediff(day,hvw_Basaperrskladkedni.datum,getdate())
