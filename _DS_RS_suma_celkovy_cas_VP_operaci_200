@@ -1,0 +1,1 @@
+(  SELECT  SUM(tpp.Kusy_zad * tpp.TAC_S / 3600.0)  FROM TabPrPostup AS tpp WITH(NOLOCK)    LEFT OUTER JOIN TabPrikaz tp WITH(NOLOCK) ON tpp.IDPrikaz=tp.ID    LEFT OUTER JOIN TabCPraco tcp WITH(NOLOCK) ON tpp.Pracoviste=tcp.ID    LEFT OUTER JOIN TabPlan tpl WITH(NOLOCK) ON tpl.ID = tp.IDPlan  WHERE ((tpp.IDOdchylkyDo IS NULL) AND tpl.ID = TabPlan.ID AND tcp.IDTabStrom = '200')  )
