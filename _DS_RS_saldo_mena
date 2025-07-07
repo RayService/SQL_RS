@@ -1,0 +1,1 @@
+(  SELECT CASE WHEN ts.MenaZobraz<>N'***' THEN  ISNULL(ISNULL((SELECT TabSaldoCM.CastkaCM_MD-TabSaldoCM.CastkaCM_Dal  FROM TabSaldoCM WITH(NOLOCK)  WHERE TabSaldoCM.IdSaldo=ts.Id),ts.SaldoCM_Ucet),0.0)  ELSE (convert(numeric(19,6),(ts.Castka_MD - ts.Castka_Dal)))  END  FROM TabSaldo ts WITH(NOLOCK)  WHERE ts.ID=TabSaldo.ID  )
