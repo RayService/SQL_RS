@@ -1,0 +1,1 @@
+(  SELECT tple._FAIRint  FROM TabPolKoopObj kop WITH(NOLOCK)  LEFT OUTER JOIN TabPrikaz tp WITH(NOLOCK) ON tp.ID=kop.IDPrikaz  LEFT OUTER JOIN TabPlan_EXT tple WITH(NOLOCK) ON tple.ID=tp.IDPlan  WHERE kop.ID=TabPolKoopObj.ID  )
