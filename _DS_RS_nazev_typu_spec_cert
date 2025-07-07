@@ -1,0 +1,1 @@
+(  SELECT t.Nazev  FROM Tabx_RS_SpecialCertificatesTypes t WITH(NOLOCK)  LEFT OUTER JOIN TabKmenZbozi_EXT tkze WITH(NOLOCK) ON tkze._EXT_RS_typ_certifikatu=t.ID  WHERE tkze.ID=TabKmenZbozi.ID  )
