@@ -1,0 +1,1 @@
+DATEDIFF(day, TabPrikaz.Plan_zadani_X,TabPrikaz.Plan_ukonceni_X )    
