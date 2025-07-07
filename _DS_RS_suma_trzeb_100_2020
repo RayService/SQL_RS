@@ -1,0 +1,1 @@
+(  SELECT ISNULL(_plantrzeb_2016,0) + ISNULL(_sen2016,0) + ISNULL(_TrzbaVH2016,0) + ISNULL(_plantrzeb_2015,0)  FROM TabCisOrg_EXT WITH(NOLOCK) WHERE ID = TabCisOrg.ID  )
