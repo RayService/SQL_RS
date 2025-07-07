@@ -1,0 +1,1 @@
+(  CASE  WHEN (DATEDIFF(day, TabDokladyZbozi.DatPorizeni_X, TabDokladyZbozi.TerminDodavkyDat_X)) > 30 THEN 0  WHEN (DATEDIFF(day, TabDokladyZbozi.DatPorizeni_X, TabDokladyZbozi.TerminDodavkyDat_X)) <= 30 THEN 1  ELSE  NULL  END  )
