@@ -1,0 +1,1 @@
+(  SELECT (PZ.Mnozstvi - PZ.MnOdebrane) * PZ.JCbezDaniKC  /  (SELECT TOP 1 tl.Kurz  FROM TabKurzList tl WITH(NOLOCK)  WHERE tl.Mena='EUR'  ORDER BY tl.Datum DESC)  FROM TabPohybyZbozi PZ WITH(NOLOCK) WHERE PZ.DruhPohybuZbo = 9 AND PZ.ID =TabPohybyZbozi.ID  )
