@@ -1,0 +1,1 @@
+(  SELECT tar.Tarif  FROM TabCisZam tcz WITH(NOLOCK)  LEFT OUTER JOIN TabTarH tar WITH(NOLOCK) ON tar.ID=(SELECT ZVT.IDTarif FROM TabZamVyrTarifu ZVT WITH(NOLOCK) WHERE ZVT.IDZam=TabCisZam.ID)  WHERE tcz.ID=TabCisZam.ID  )
