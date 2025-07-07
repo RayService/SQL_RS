@@ -1,0 +1,1 @@
+(  SELECT SUM(tkk.TBC_H)  FROM  TabPozaZDok_kalk pozdok WITH(NOLOCK)  LEFT OUTER JOIN TabDetailniKalkulace_kalk tkk WITH(NOLOCK) ON tkk.IDVyssi=pozdok.IDKmenZbozi AND tkk.IDZakazka=pozdok.IDZakazka AND tkk.TypRadku=30  WHERE pozdok.ID=hvw_9100B808A2064CA994329B7898E0DC2E.ID  )
