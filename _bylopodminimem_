@@ -1,0 +1,1 @@
+cast((case when hvw_F0stavskladukedni.mnozstvikedni<(select minimum from tabstavskladu ts  WITH(NOLOCK)  where ts.id=hvw_F0stavskladukedni.idzbosklad) then 1 else 0 end) as bit)
