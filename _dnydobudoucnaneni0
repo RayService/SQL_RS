@@ -1,0 +1,1 @@
+(case when hvw_Basaperrskladkedni.stavplusdsnkedni=0 then 0 else datediff(day,  hvw_Basaperrskladkedni.datum,isnull((select min(ass.datum) from asaperskladkedni ass where ass.idzbosklad=hvw_Basaperrskladkedni.idzbosklad and ass.datum>hvw_Basaperrskladkedni.datum ),getdate())) end)
