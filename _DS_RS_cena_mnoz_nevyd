@@ -1,0 +1,1 @@
+(  SELECT  prkv.mnoz_Nevydane*tss.Prumer  FROM TabPrKVazby prkv WITH(NOLOCK)  LEFT OUTER JOIN TabStavSkladu tss WITH(NOLOCK) ON prkv.Sklad=tss.IDSklad AND prkv.nizsi=tss.IDKmenZbozi  WHERE  (prkv.IDOdchylkyDo IS NULL)AND(prkv.ID=TabPrKVazby.ID)AND(prkv.prednastaveno=1)  )
