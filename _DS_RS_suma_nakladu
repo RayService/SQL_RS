@@ -1,0 +1,1 @@
+(  SELECT ISNULL(pvre._EXT_RAY_value1,0) + ISNULL(pvre._EXT_RAY_value2,0) + ISNULL(pvre._EXT_RAY_value3,0) + ISNULL(pvre._EXT_RAY_value4,0) + ISNULL(pvre._EXT_RAY_value5,0)  FROM TabPersVyberRizeni pvr WITH(NOLOCK)  JOIN TabPersVyberRizeni_EXT pvre WITH(NOLOCK) ON pvre.ID = pvr.ID  WHERE pvr.ID = TabPersVyberRizeni.ID  )
