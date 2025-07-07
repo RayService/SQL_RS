@@ -1,0 +1,1 @@
+(  SELECT TOP 1 tdz2.Kurz  FROM TabDokladyZbozi tdz1 WITH(NOLOCK)  LEFT OUTER JOIN TabPohybyZbozi tpz1 WITH(NOLOCK) ON tpz1.IDDoklad=tdz1.ID  LEFT OUTER JOIN TabPohybyZbozi tpz2 WITH(NOLOCK) ON tpz2.ID=tpz1.IDOldPolozka  LEFT OUTER JOIN TabDokladyZbozi tdz2 WITH(NOLOCK) ON tdz2.ID=tpz2.IDDoklad  WHERE tdz1.ID=TabDokladyZbozi.ID  ORDER BY tdz2.DatPorizeni ASC  )
