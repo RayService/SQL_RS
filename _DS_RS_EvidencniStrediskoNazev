@@ -1,0 +1,1 @@
+(  SELECT ts.Nazev  FROM TabKmenZbozi_EXT tkze WITH(NOLOCK)  LEFT OUTER JOIN TabStrom ts WITH(NOLOCK) ON ts.Cislo=tkze._EXT_RS_evidencni_stredisko  WHERE tkze.ID=TabKmenZbozi.ID  )
