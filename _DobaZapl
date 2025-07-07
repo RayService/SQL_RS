@@ -1,0 +1,1 @@
+DATEDIFF(day, TabPlan.DatPorizeni_X,(SELECT _DatumZaplanovani FROM TabPlan_EXT WHERE ID=TabPlan.ID))
