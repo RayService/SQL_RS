@@ -1,0 +1,1 @@
+(  SELECT tppkv.mnoz_zad * tss.Prumer  FROM TabPlanPrKVazby tppkv WITH(NOLOCK)  LEFT OUTER JOIN TabStavSkladu tss WITH(NOLOCK) ON tss.IDSklad=tppkv.Sklad AND tppkv.nizsi=tss.IDKmenZbozi  WHERE tppkv.ID = TabPlanPrKVazby.ID  )
