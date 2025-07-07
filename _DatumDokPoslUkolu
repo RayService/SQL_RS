@@ -1,0 +1,1 @@
+(  SELECT TOP 1 u.DatumDokonceni FROM TabUkoly u   WHERE u.IDKontaktJed = TabKontaktJednani.ID AND u.DatumDokonceni IS NOT NULL  ORDER BY u.DatumDokonceni DESC  )
