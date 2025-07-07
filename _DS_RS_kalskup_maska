@@ -1,0 +1,1 @@
+(  SELECT tkze._KalSkup  FROM Tabx_RS_KalkulaceObchodni tpz WITH(NOLOCK)  LEFT OUTER JOIN TabKmenZbozi tkz WITH(NOLOCK) ON tkz.ID=tpz.Dilec  LEFT OUTER JOIN TabKmenZbozi_EXT tkze WITH(NOLOCK) ON tkze.ID=tkz.ID  WHERE tpz.ID=hvw_C735B67F62564FC7B651481EA0C6388B.ID  )
