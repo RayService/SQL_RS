@@ -1,0 +1,1 @@
+(  SELECT t.Name  FROM TabDokladyZbozi_EXT tde WITH(NOLOCK)  LEFT OUTER JOIN Tabx_RS_TechnlogiesList t WITH(NOLOCK) ON t.code=tde._EXT_RS_TechnologyOffer  WHERE tde.ID=TabDokladyZbozi.ID  )
