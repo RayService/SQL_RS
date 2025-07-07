@@ -1,0 +1,1 @@
+(  CAST ( CASE WHEN EXISTS (  SELECT bal.*  FROM Tabx_RS_Packing_Doklad bal WITH (NOLOCK)  LEFT OUTER JOIN TabVyrCP vcp WITH (NOLOCK) ON vcp.ID=bal.ID_VyrCP_Item  LEFT OUTER JOIN TabPohybyZbozi tpz WITH (NOLOCK) ON tpz.ID=vcp.IDPolozkaDokladu  LEFT OUTER JOIN TabDokladyZbozi tdz WITH (NOLOCK) ON tdz.ID=tpz.IDDoklad  WHERE tdz.ID=TabDokladyZbozi.ID  )  THEN 1 ELSE 0 END AS BIT)  )
