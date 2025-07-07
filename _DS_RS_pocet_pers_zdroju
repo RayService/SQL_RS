@@ -1,0 +1,1 @@
+(  SELECT COUNT(tvpvpz.IDVyrPerZdroje)  FROM TabPrPostupVyrProfese prvp WITH(NOLOCK)  LEFT OUTER JOIN TabVyrProfeseVyrPerZdroju tvpvpz WITH(NOLOCK) ON tvpvpz.IDVyrProfese=prvp.IDVyrProfese  WHERE  (prvp.IDPostup=TabPrPostup.ID)  GROUP BY prvp.IDPostup  )
