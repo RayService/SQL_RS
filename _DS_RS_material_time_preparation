@@ -1,0 +1,1 @@
+(  SELECT (tkze._EXT_RS_material_time) * 2.5  FROM TabKmenZbozi tkz WITH(NOLOCK)  JOIN TabKmenZbozi_EXT tkze WITH(NOLOCK) ON tkze.ID = tkz.ID  WHERE tkz.ID = TabKmenZbozi.ID  )
