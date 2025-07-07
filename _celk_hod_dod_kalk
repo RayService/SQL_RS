@@ -1,0 +1,2 @@
+(   SELECT     (     SELECT NULLIF(MAX(COALESCE(H,N'ZZZZ')),N'ZZZZ')     FROM       (SELECT H = CAST(J as NVARCHAR(4))      UNION ALL SELECT U      UNION ALL SELECT V) as T2    )   FROM    (SELECT J = _jakost, U =_uplnost , V = _vcasnost    FROM TabPohybyZbozi_EXT WITH(NOLOCK)    WHERE ID = TabPohybyZbozi.ID) as T1  )
+
