@@ -1,0 +1,1 @@
+(  SELECT TP.mnozstvi * AVG(PZ.JCBezDaniKC)  FROM TabPlan TP WITH(NOLOCK)  INNER JOIN TabPlanZdrojOZ TPZ WITH(NOLOCK) ON TPZ.IDPlan = TP.ID  JOIN TabPohybyZbozi PZ WITH(NOLOCK) ON TPZ.IDRezervace = PZ.ID  JOIN TabDokladyZbozi TD WITH(NOLOCK) ON TD.ID = PZ.IDDoklad  WHERE TP.ID = TabPlan.ID  GROUP BY TP.ID, TP.mnozstvi  )
