@@ -1,0 +1,1 @@
+CAST (CASE WHEN EXISTS(  SELECT tpz.ID  FROM TabPohybyZbozi tpz WITH(NOLOCK)  JOIN TabDokladyZbozi tdz WITH(NOLOCK) ON tdz.ID=tpz.IDDoklad  WHERE ((tpz.Hmotnost= 0 OR tpz.ZemePuvodu IS NULL) AND tdz.ID=TabDokladyZbozi.ID)) THEN 1 ELSE 0  END AS BIT)
