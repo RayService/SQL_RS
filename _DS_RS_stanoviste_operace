@@ -1,0 +1,1 @@
+(  SELECT prpe._Stan  FROM TabPrPostup_EXT prpe WITH(NOLOCK)  LEFT OUTER JOIN TabPrPostup prp WITH(NOLOCK) ON prp.ID=prpe.ID  LEFT OUTER JOIN TabPrKVazby prkv WITH(NOLOCK) ON prkv.IDPrikaz=prp.IDPrikaz AND prp.Doklad=dbo.hf_GetPrPDokladForPrKV(TabPrKVazby.ID) AND prp.prednastaveno=1 AND prp.IDOdchylkyDo IS NULL  WHERE prkv.ID=TabPrKVazby.ID  )
