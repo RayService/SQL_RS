@@ -1,0 +1,1 @@
+(  SELECT tpz.JCevidSN /   (SELECT TOP 1 tl.Kurz  FROM TabKurzList tl WITH(NOLOCK)  WHERE tl.Mena='EUR'  ORDER BY tl.Datum DESC)  FROM TabPohybyZbozi tpz WITH(NOLOCK)  WHERE tpz.ID=TabPohybyZbozi.ID  )
