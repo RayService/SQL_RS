@@ -1,0 +1,1 @@
+(SELECT TOP 1 PU.DatPorizeni FROM Gatema_PohybUmisteni PU WITH(NOLOCK)   WHERE PU.IDStavSkladu=hvw_RozdilKVydeji.IDStavSkladu AND   ISNULL(PU.IDVyrCis, 0)=ISNULL(hvw_RozdilKVydeji.IDVyrCis, 0) AND PU.IDUmisteni=hvw_RozdilKVydeji.IDUmisteni ORDER BY PU.ID DESC)
