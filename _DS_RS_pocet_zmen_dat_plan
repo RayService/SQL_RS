@@ -1,0 +1,1 @@
+(  SELECT COUNT(tzlog.ID)  FROM GTabLogovaneInformace tzlog WITH(NOLOCK)  WHERE tzlog.IDZaznam = TabPlan.ID AND tzlog.SysNazevTabulka LIKE N'TabPlan%' AND tzlog.SysNazevAtribut LIKE N'datum%' AND tzlog.Akce=1  )
