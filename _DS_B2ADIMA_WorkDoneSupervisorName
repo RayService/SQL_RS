@@ -1,0 +1,2 @@
+(  SELECT PrijmeniJmeno  FROM TabCisZam WITH(NOLOCK)  WHERE  Cislo = (select _EXT_B2ADIMA_WorkDoneSupervisorPersonalNr from TabPrikazMzdyAZmetky_EXT WITH(NOLOCK) where TabPrikazMzdyAZmetky_EXT.ID=TabPrikazMzdyAZmetky.ID)  )
+
