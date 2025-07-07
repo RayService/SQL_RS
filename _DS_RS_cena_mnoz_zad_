@@ -1,0 +1,1 @@
+(  SELECT tppkv.mnoz_zad * tss.Prumer  FROM hvw_E1E467587E33463796E6016B9937023D tppkv WITH(NOLOCK)  LEFT OUTER JOIN TabStavSkladu tss WITH(NOLOCK) ON tss.IDSklad=tppkv.Sklad AND tppkv.nizsi=tss.IDKmenZbozi  WHERE tppkv.ID = hvw_E1E467587E33463796E6016B9937023D.ID  )
