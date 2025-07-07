@@ -1,0 +1,1 @@
+(  SELECT TOP 1 tzlog.New  FROM TabZmenovyLog tzlog WITH(NOLOCK)  LEFT OUTER JOIN TabPrPostup tpp WITH(NOLOCK) ON tpp.ID = tzlog.IDvTab  WHERE (((tzlog.Tabulka=N'TabDokladyZbozi') AND tzlog.IDvTab=TabDokladyZbozi.ID) AND (tzlog.Sloupec LIKE N'DatPorizeni')AND(tzlog.LogAkce LIKE N'I'))  ORDER BY tzlog.Datum ASC  )
