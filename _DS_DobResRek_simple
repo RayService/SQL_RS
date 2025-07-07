@@ -1,0 +1,1 @@
+(  CASE  WHEN (DATEDIFF(day, TabKontaktJednani.DatumJednaniOd_X, TabKontaktJednani.DatumJednaniDo_X)) > 14 THEN 0  WHEN (DATEDIFF(day, TabKontaktJednani.DatumJednaniOd_X, TabKontaktJednani.DatumJednaniDo_X)) <= 14 THEN 1  ELSE  NULL  END  )
