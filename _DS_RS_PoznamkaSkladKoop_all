@@ -1,0 +1,1 @@
+(  SELECT tcoe._PoznámkaSkladKoop  FROM TabKoopObj_EXT tcoe WITH(NOLOCK) WHERE tcoe.ID=TabKoopObj.ID  )
