@@ -1,0 +1,1 @@
+(  SELECT CONCAT(Jmeno,' ',Prijmeni) AS JmenoPrijmeni  FROM TabCisZam WITH(NOLOCK)  WHERE ID = (  SELECT _EXT_B2ADIMA_ForemanId  FROM TabStrom_EXT WITH(NOLOCK)  WHERE TabStrom_EXT.ID = TabStrom.ID  )  )
