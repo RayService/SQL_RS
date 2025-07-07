@@ -1,0 +1,1 @@
+(  CAST (CASE WHEN EXISTS    (SELECT tpmz.ID  FROM TabPrikazMzdyAZmetky tpmz WITH(NOLOCK)  LEFT OUTER JOIN TabPrikaz tp WITH(NOLOCK) ON tp.ID = tpmz.IDPrikaz  WHERE TypMzdy = 0 AND tp.ID = TabPrikaz.ID AND tpmz.IDPracoviste <> 164) THEN 1 ELSE 0 END AS BIT)  )
