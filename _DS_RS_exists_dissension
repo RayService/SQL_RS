@@ -1,0 +1,1 @@
+CAST (CASE WHEN EXISTS(  SELECT tqd.*  FROM Tabx_Apps_QaDefectReport tqd WITH (NOLOCK)  WHERE (tqd.productionOrderId=TabPrikaz.ID AND tqd.statusId=1)) THEN 0 ELSE 1  END AS BIT)
