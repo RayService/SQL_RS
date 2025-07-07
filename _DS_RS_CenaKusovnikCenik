@@ -1,0 +1,1 @@
+(  SELECT TOP 1 kc.Cena_vypoctena  FROM hvw_49230AD4A78D4639B265A02071A119B1 kc WITH(NOLOCK)  WHERE kc.IDnizsi=#TabBudPohyby.IDKmeneZbozi AND kc.IDZakazka=#TabBudPohyby.IDZakazka  ORDER BY kc.Cena_vypoctena ASC  )
