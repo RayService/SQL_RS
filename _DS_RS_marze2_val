@@ -1,0 +1,1 @@
+(     SELECT (PZ.CCbezDaniKcPoSdruhova - ISNULL(SNV.Celkem,0) - PZ.CCEvidSNdruh)/tdz.Kurz     FROM TabPohybyZbozi PZ WITH(NOLOCK)     JOIN TabPohybySNView SNV WITH(NOLOCK) ON PZ.ID = SNV.ID     JOIN TabDokladyZbozi tdz WITH(NOLOCK) ON tdz.ID=PZ.IDDoklad     WHERE TabPohybyZbozi.ID = PZ.ID  )
