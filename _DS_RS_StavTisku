@@ -1,0 +1,1 @@
+(  SELECT TOP 1 gpu.Stav  FROM GTabRPSeznamPozadavku gpu WITH(NOLOCK)  WHERE BrowseID=100117 AND gpu.DatPorizeni > GETDATE()-10  AND RIGHT(CAST(gpu.Filtr AS NVARCHAR(255)),LEN(CAST(gpu.Filtr AS NVARCHAR(255)))-CHARINDEX('=',gpu.Filtr)-1)=hvw_Vyskladneni.ID  ORDER BY gpu.ID DESC  )
