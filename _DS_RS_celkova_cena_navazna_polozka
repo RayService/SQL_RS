@@ -1,0 +1,1 @@
+(  SELECT SUM(tpz2.CCbezDaniKcPoS)  FROM TabPohybyZbozi tpz WITH(NOLOCK)  LEFT OUTER JOIN TabPohybyZbozi tpz2 WITH(NOLOCK) ON tpz2.IDOldPolozka = tpz.ID  LEFT OUTER JOIN TabDokladyZbozi tdz2 WITH(NOLOCK) ON tdz2.ID = tpz2.IDDoklad  WHERE tpz.ID = TabPohybyZbozi.ID AND tdz2.DruhPohybuZbo = 9  )
