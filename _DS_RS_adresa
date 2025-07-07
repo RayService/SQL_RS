@@ -1,0 +1,1 @@
+(  SELECT  CONCAT( tco.Misto,', ',tco.UliceSCisly)  FROM TabSaldo ts WITH(NOLOCK)  LEFT OUTER JOIN TabCisOrg tco WITH(NOLOCK) ON ts.CisloOrg=tco.CisloOrg  WHERE ts.ID=TabSaldo.ID  )
