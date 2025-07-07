@@ -1,0 +1,1 @@
+DATEDIFF(day, TabKontaktJednani.DatumJednaniOd_X, TabKontaktJednani.DatumJednaniDo_X)
