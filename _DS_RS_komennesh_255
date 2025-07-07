@@ -1,0 +1,1 @@
+(  SELECT  SUBSTRING(REPLACE(SUBSTRING(tcoe._komennesh,1,255),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,255)  FROM TabPrikazMzdyAZmetky_EXT tcoe WITH(NOLOCK) WHERE tcoe.ID=TabPrikazMzdyAZmetky.ID  )
