@@ -1,0 +1,1 @@
+(  SELECT tii.EvidCenaCelkem /   (SELECT TOP 1 tl.Kurz  FROM TabKurzList tl WITH(NOLOCK)  WHERE tl.Mena='EUR'  ORDER BY tl.Datum DESC)  FROM TabInvItem tii WITH(NOLOCK)  WHERE tii.ID=TabInvItem.ID  )
