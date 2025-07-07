@@ -1,0 +1,1 @@
+CASE WHEN #TabPorPS.Celkem_P_Pl=0 THEN NULL WHEN   (((#TabPorPS.Celkem_P/#TabPorPS.Celkem_P_Pl)*100)-100>0) Then  ((#TabPorPS.Celkem_P/#TabPorPS.Celkem_P_Pl)*100)-100 else null end
