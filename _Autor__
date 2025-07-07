@@ -1,0 +1,1 @@
+(SELECT Autor FROM Gatema_PohybUmisteni_EXT WITH(NOLOCK)  WHERE ID=hvw_Gatema_PohybUmisteni.ID)
