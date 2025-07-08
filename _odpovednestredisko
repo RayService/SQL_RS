@@ -1,0 +1,1 @@
+cast((SELECT  Nazev FROM TabStrom WITH(NOLOCK)  WHERE (TabStrom.Cislo=TabZakazka.Stredisko)) as varchar(30))  
