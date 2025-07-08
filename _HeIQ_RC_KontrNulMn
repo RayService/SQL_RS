@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabKvazby.mnozstvi=0 THEN 1 END AS INT)    
