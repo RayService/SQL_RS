@@ -1,0 +1,1 @@
+CAST(CASE WHEN (SELECT U.DatPorizeni_X FROM TabPlan U WHERE U.ID=TabPlan.ID) < GetDate() -5 THEN 255 END AS INT)
