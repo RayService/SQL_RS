@@ -1,0 +1,1 @@
+(CAST(  CASE WHEN hvw_BI_plneniDodavek.ROZDIL>0 THEN 1 ELSE 0  END AS INT)  )
