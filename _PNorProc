@@ -1,0 +1,1 @@
+((SELECT ISNULL(SUM(MZ.Sk_cas_H),0) FROM TabPrikazMzdyAZmetky MZ WITH(NOLOCK) WHERE   MZ.IDPrikaz=TabPrPostup.IDprikaz    AND  MZ.DokladPrPostup=TabPrPostup.Doklad   AND   MZ.AltPrPostup=TabPrPostup.Alt    AND MZ.stav=1)  /  ((SELECT TAC_J_H FROM TabPrPostup PPS WITH(NOLOCK) WHERE PPS.ID = TabPrPostup.ID)+0.00001))*100
