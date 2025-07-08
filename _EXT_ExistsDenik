@@ -1,0 +1,1 @@
+CAST(  (CASE WHEN EXISTS (SELECT ID FROM TabDenik D WHERE   D.IdObdobiMZ=TabMzKontace.IdObdobi AND TabMzKontace.IdObdobi=:__IDMZDOBD) THEN 1  ELSE 0  END)   AS BIT)  
