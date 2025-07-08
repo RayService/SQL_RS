@@ -1,0 +1,1 @@
+(SELECT Stav FROM TabPrikazMzdyAZmetky WITH(NOLOCK)  WHERE TabPrikazMzdyAZmetky.IDPrikaz=TabPrPostup.IDPrikaz AND TabPrikazMzdyAZmetky.DokladPrPostup=TabPrPostup.Doklad AND TabPrikazMzdyAZmetky.AltPrPostup=TabPrPostup.Alt AND TabPrPostup.IDOdchylkyDo IS NULL)
