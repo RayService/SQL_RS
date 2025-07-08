@@ -1,0 +1,1 @@
+(  SELECT NadrizenaZak  FROM TabZakazka AS tz WITH(NOLOCK)  JOIN TabCisZam AS tcz WITH(NOLOCK) ON tz.CisloZakazky = tcz.Zakazka  JOIN TabPrikazMzdyAZmetky AS tpmaz WITH(NOLOCK) ON tpmaz.Zamestnanec=tcz.ID  WHERE tpmaz.ID = TabPrikazMzdyAZmetky.ID  )
