@@ -1,0 +1,1 @@
+(case when hvw_Basaperrskladkedni.mnozstvikedni=0 then 0 else round(hvw_Basaperrskladkedni.stavkedni/hvw_Basaperrskladkedni.mnozstvikedni,2) end)
