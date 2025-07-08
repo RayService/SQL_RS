@@ -1,0 +1,1 @@
+(SELECT ISNULL(SUM(PrKV.mnoz_zad-PrKV.VydanoRefMnoz),0)         FROM TabPrKVazby PrKV WITH(NOLOCK)               INNER JOIN TabPrikaz P WITH(NOLOCK) ON (P.ID=PrKV.IDPrikaz AND P.kusy_zive>0.0)         WHERE P.StavPrikazu=20 AND PrKV.nizsi=TabStavSkladu.IDKmenZbozi AND PrKV.IDOdchylkyDo IS NULL AND PrKV.Splneno=0 AND PrKV.prednastaveno=1)
