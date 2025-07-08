@@ -1,0 +1,1 @@
+(SELECT TabKmenZbozi.Nazev1 FROM TabKmenZbozi WITH(NOLOCK) WHERE TabPrKVazby.nizsi=TabKmenZbozi.ID)
