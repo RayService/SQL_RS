@@ -1,0 +1,1 @@
+CAST(CASE WHEN EXISTS(SELECT * FROM Tabx_ReseniHeO_SpidOzn WHERE TabName = N'TabTypPostup' AND SPID = @@SPID AND IDTab = TabTypPostup.ID) THEN 32768 END as INT)
