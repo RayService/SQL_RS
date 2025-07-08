@@ -1,0 +1,1 @@
+(SELECT TOP 1 (SUBSTRING(REPLACE(SUBSTRING(TabPrPostup.[Poznamka],1,255),(CHAR(13) + CHAR(10)),' '),1,255))  FROM TabPrPostup WITH(NOLOCK) WHERE TabPrPostup.Dilec=TabKmenZbozi.ID AND TabPrPostup.Operace = N'    5' AND TabKmenZbozi.Dilec = 1)
