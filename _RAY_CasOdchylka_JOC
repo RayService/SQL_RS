@@ -1,0 +1,1 @@
+CASE   WHEN (SELECT (Cas_PL_H * 100)  FROM #TabPorPS PPS WHERE PPS.ID = #TabPorPS.ID) <> 0 THEN   (SELECT ((PPS.OdpracovanyCas_H - Cas_PL_H) / (Cas_PL_H ))* 100  FROM #TabPorPS PPS WHERE PPS.ID = #TabPorPS.ID)  ELSE  NULL  END    
