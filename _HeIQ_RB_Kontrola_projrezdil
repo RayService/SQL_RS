@@ -1,0 +1,1 @@
+CAST(CASE WHEN   ISNULL((SELECT _projrezdil FROM TabKmenZbozi_EXT WITH(NOLOCK) WHERE ID = TabKvazby.vyssi),N'##########') <> ISNULL((SELECT _projrezdil FROM TabKmenZbozi_EXT WITH(NOLOCK) WHERE ID = TabKvazby.nizsi),N'##########')  THEN 1 END as INT)
