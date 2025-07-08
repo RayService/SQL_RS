@@ -1,0 +1,1 @@
+(  SELECT tpkv.PromB  FROM TabPrKVazby tpkv WITH(NOLOCK)  JOIN TabPohybyZbozi tpz WITH(NOLOCK) ON tpz.DokladPrikazu = tpkv.Doklad AND tpz.IDPrikaz = tpkv.IDPrikaz  JOIN Gatema_SDScanData gsd WITH(NOLOCK) ON gsd.IDPohZbo_New = tpz.ID AND gsd.IDKmenZbozi = tpkv.nizsi  WHERE gsd.ID =hvw_TermNasnimPol.ID AND tpkv.IDOdchylkyDo IS NULL  )
