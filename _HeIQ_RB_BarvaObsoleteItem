@@ -1,0 +1,1 @@
+CAST (CASE WHEN   (SELECT tkze._EXT_RS_DuvodHlaseni  FROM TabKvazby tkv WITH(NOLOCK)    LEFT OUTER JOIN TabKmenZbozi tkzN WITH(NOLOCK) ON tkv.nizsi=tkzN.ID    LEFT OUTER JOIN TabKmenZbozi_EXT tkze WITH(NOLOCK) ON tkze.ID=tkzN.ID    WHERE tkv.ID=TabKvazby.ID) LIKE N'%obsolete%'   THEN 12615935 ELSE NULL END AS INT)    
