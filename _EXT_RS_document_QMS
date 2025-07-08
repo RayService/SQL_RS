@@ -1,0 +1,1 @@
+(CAST(CASE WHEN EXISTS(SELECT*FROM TabDokumVazba WITH(NOLOCK) JOIN TabDokumenty_EXT WITH(NOLOCK) ON TabDokumenty_EXT.ID = TabDokumVazba.IdDok WHERE IdentVazby = 8 and IDTab = TabKmenZbozi.ID AND TabDokumenty_EXT._EXT_RS_dokument_QMS = 1)THEN 1 ELSE 0 END AS BIT))
