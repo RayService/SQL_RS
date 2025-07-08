@@ -1,0 +1,1 @@
+CAST(CASE WHEN (SELECT _projrezdil FROM TabKmenZbozi_EXT WITH(NOLOCK) WHERE ID=TabKmenZbozi.ID) = 'Awacs' THEN 7631988 END AS INT)
