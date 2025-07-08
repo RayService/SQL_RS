@@ -1,0 +1,1 @@
+(SELECT VCisOrgOdpOs.PrijmeniJmeno FROM TabCisOrg WITH(NOLOCK)   JOIN TabCisZam VCisOrgOdpOs WITH(NOLOCK) ON TabCisOrg.OdpOs=VCisOrgOdpOs.ID  JOIN TabZakazka WITH(NOLOCK) ON TabZakazka.Prijemce = TabCisOrg.CisloOrg  WHERE TabZakazka.ID = (SELECT P.IDZakazka FROM TabPrikaz P WHERE P.ID=TabPrikazMzdyAZmetky.IDPrikaz)  )
