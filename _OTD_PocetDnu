@@ -1,0 +1,1 @@
+CASE WHEN TabPohybyZbozi.PotvrzDatDod IS NOT NULL THEN (SELECT DATEDIFF(DAY,DatPorizeni,TabPohybyZbozi.PotvrzDatDod) FROM TabDokladyZbozi WHERE ID = TabPohybyZbozi.IDDoklad) END
