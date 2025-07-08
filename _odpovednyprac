@@ -1,0 +1,1 @@
+cast((SELECT  PrijmeniJmenoTituly FROM TabCisZam WITH(NOLOCK)  WHERE (TabCisZam.Cislo=TabZakazka.Zodpovida)) as varchar(30))
