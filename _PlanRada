@@ -1,0 +1,1 @@
+(SELECT Rada FROM TabPlan WITH(NOLOCK) WHERE TabPlanPrPostup.IDPlan=TabPlan.ID)
