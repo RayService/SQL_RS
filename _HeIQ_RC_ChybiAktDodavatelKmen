@@ -1,0 +1,1 @@
+CAST (CASE WHEN EXISTS  (SELECT tkz.ID  FROM TabPohybyZbozi tpz WITH(NOLOCK)  LEFT OUTER JOIN TabKmenZbozi tkz WITH(NOLOCK) ON tkz.ID=(SELECT TabStavSkladu.IDKmenZbozi FROM TabStavSkladu WHERE TabStavSkladu.ID=tpz.IDZboSklad)  WHERE tpz.ID=TabPohybyZbozi.ID AND tkz.Aktualni_Dodavatel IS NULL) THEN 16744448 ELSE NULL END AS INT)
