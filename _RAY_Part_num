@@ -1,0 +1,1 @@
+(Select E._RAY_Part_number from tabnc_ext e where  e.ID = (Select NC.ID    from TabNC NC WITH(NOLOCK)   INNER JOIN TabDokladyZbozi D WITH(NOLOCK) ON D.ID =:ID   INNER JOIN TabCisOrg O WITH(NOLOCK) ON O.CisloOrg = D.CisloOrg and O.CenovaUroven = NC.CenovaUroven   where NC.ID = E.ID and TabStavSkladu.IDKmenZbozi = NC.IDKmenZbozi)  )      
