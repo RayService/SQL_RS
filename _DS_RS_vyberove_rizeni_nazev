@@ -1,0 +1,1 @@
+(  SELECT Nazev  FROM TabPrikazMzdyAZmetky tpmz WITH(NOLOCK)  JOIN TabPrikazMzdyAZmetky_EXT tpmze WITH(NOLOCK) ON tpmze.ID = tpmz.ID  LEFT OUTER JOIN TabPersVyberRizeni pvr WITH(NOLOCK) ON pvr.ID = tpmze._EXT_RS_vyberove_rizeni  WHERE tpmz.ID = TabPrikazMzdyAZmetky.ID  )
