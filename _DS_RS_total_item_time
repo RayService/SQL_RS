@@ -1,0 +1,1 @@
+(  SELECT  (tk.mnf*ISNULL(tkz_EXT._EXT_RS_material_time,0))  FROM TabKusovnik tk WITH(NOLOCK)    LEFT OUTER JOIN TabKmenZbozi tkz WITH(NOLOCK) ON tk.IDKmenZbozi=tkz.ID    LEFT OUTER JOIN TabKmenZbozi_EXT tkz_EXT WITH(NOLOCK) ON tkz_EXT.ID=tkz.ID  WHERE tk.Autor = SUSER_SNAME() AND tk.ID = TabKusovnik.ID  )
