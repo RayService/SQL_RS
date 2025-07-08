@@ -1,0 +1,1 @@
+(CAST(  CASE WHEN NOT EXISTS (SELECT tpze.*         FROM TabPohybyZbozi tpz WITH(NOLOCK)         LEFT OUTER JOIN TAbpohybyzbozi_EXT tpze WITH(NOLOCK) ON tpze.ID=tpz.ID         WHERE tpz.IDDoklad=TabDokladyZbozi.ID AND tpze._SkutDatKon IS NULL)    THEN 1 ELSE 0 END AS BIT)  )
