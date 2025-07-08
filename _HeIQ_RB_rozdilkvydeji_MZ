@@ -1,0 +1,1 @@
+(  CAST (CASE  WHEN (SELECT hvw.SkupZbo  FROM hvw_RozdilKVydeji hvw WITH(NOLOCK)  LEFT OUTER JOIN TabKmenZbozi tkz WITH(NOLOCK) ON hvw.KZID=tkz.ID  WHERE  (hvw.ID = hvw_RozdilKVydeji.ID)) ='999'  THEN 15790222  ELSE NULL  END AS INT)  )
