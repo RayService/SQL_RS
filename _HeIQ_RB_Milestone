@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabPrPostup.Poznamka LIKE N'%stone%' THEN 16711935 END as INT)  
