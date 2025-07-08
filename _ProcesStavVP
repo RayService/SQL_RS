@@ -1,0 +1,1 @@
+CASE WHEN (SELECT ISNULL(SUM(MZ.Sk_cas_N),0) FROM TabPrikazMzdyAZmetky MZ WITH(NOLOCK) WHERE MZ.IDPrikaz=TabPrikaz.ID AND MZ.stav=1) <> 0     THEN ((   (SELECT ISNULL(SUM(MZ.Sk_cas_N),0) FROM TabPrikazMzdyAZmetky MZ WITH(NOLOCK) WHERE MZ.IDPrikaz=TabPrikaz.ID AND MZ.stav=1) /       TabPrikaz.kusy_zad*(TabPrikaz.TAC_P_N+TabPrikaz.TBC_P_N+TabPrikaz.TEC_P_N)) )    *100 ELSE NULL END
