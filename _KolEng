@@ -1,0 +1,1 @@
+DATEDIFF(day, (  SELECT TOP 1 tplp.Plan_zadani_X  FROM TabPlanPrikaz tplp WITH(NOLOCK)  LEFT OUTER JOIN TabPlan tp WITH (NOLOCK) ON tp.ID=tplp.IDPlan  WHERE tp.ID=TabPlan.ID  ORDER BY tplp.Plan_zadani_X DESC  )-13,(SELECT _DatEng FROM TabPlan_EXT WHERE ID=TabPlan.ID))  
