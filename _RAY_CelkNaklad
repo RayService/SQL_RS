@@ -1,0 +1,1 @@
+(SELECT ((mzda*6.37)+(mat*1.15)+(koop*1.15)) FROM #TabPorPS PPS WITH(NOLOCK) WHERE PPS.ID = #TabPorPS.ID)
