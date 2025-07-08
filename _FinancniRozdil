@@ -1,0 +1,2 @@
+(  SELECT (SELECT CASE WHEN SS.Mnozstvi=0 THEN SS.Prumer WHEN SS.Mnozstvi>0 THEN SS.StavSkladuSouvis/SS.Mnozstvi END   FROM TabStavSkladu SS WITH(NOLOCK) WHERE SS.ID=II.IDSklad)*(SUM(II2.MnozstviInv)-SUM(II2.MnozstviSklad))   FROM TabInvItem II WITH(NOLOCK)  LEFT OUTER JOIN TabInvItem II2 WITH(NOLOCK) ON II2.IdSklad=II.IdSklad AND II2.IdDoklad=II.IdDoklad   WHERE II.Id=TabInvItem.ID AND II.IdVyrCS IS NULL  GROUP BY II.IdSklad)
+
