@@ -1,0 +1,1 @@
+(REPLICATE('0',(10 - LEN((Select D.ParovaciZnak from TabDokladyzbozi D WITH(NOLOCK) where D.ID = TabPohybyZbozi.IDDoklad)))) +   CONVERT(VARCHAR(10),(Select D.ParovaciZnak from TabDokladyzbozi D WITH(NOLOCK) where D.ID = TabPohybyZbozi.IDDoklad)))      
