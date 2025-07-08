@@ -1,0 +1,1 @@
+(SELECT SUM (TabPrKVazby.Mnoz_skut_realizovane) FROM TabPrkVazby WITH(NOLOCK)  WHERE TabPrKVazby.IDPrikaz=#TabPorPS.IDPrikaz AND TabPrKVazby.IDOdchylkyDo IS NULL)
