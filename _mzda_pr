@@ -1,0 +1,1 @@
+CASE WHEN hvw_HodnoceniZakazek.Mzda_P_Pl=0 OR hvw_HodnoceniZakazek.Mzda_P_Pl IS NULL THEN NULL WHEN   (((hvw_HodnoceniZakazek.Mzda_P/hvw_HodnoceniZakazek.Mzda_P_Pl)*100)<=100) Then  ((hvw_HodnoceniZakazek.Mzda_P/hvw_HodnoceniZakazek.Mzda_P_Pl)*100) else 100 end
