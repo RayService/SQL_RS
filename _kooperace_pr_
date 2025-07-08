@@ -1,0 +1,1 @@
+CASE WHEN #TabPorPS.Koop_P_Pl=0  or #TabPorPS.Koop_P_Pl is null THEN NULL WHEN   (((#TabPorPS.Koop_P/#TabPorPS.Koop_P_Pl)*100)<=100) Then  ((#TabPorPS.Koop_P/#TabPorPS.Koop_P_Pl)*100) else 100 end
