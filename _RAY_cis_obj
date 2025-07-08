@@ -1,0 +1,1 @@
+RIGHT ('0000000000' + (Select Z.CisloObjednavky from TabZakazka Z WITH(NOLOCK) where Z.CisloZakazky=TabDokladyZbozi.CisloZakazky), 10)  
