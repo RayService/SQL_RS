@@ -1,0 +1,1 @@
+CAST(CASE WHEN CAST(   ROUND(    (TabPohybyZbozi.JCbezDaniKc /     NULLIF((SELECT VNC.CenaKC FROM TabNC VNC WITH(NOLOCK)      WHERE VNC.CenovaUroven = 200        AND VNC.IDKmenZbozi = (SELECT IDKmenZbozi FROM TabStavSkladu WITH(NOLOCK) WHERE ID = TabPohybyZbozi.IDZboSklad)       AND VNC.IDZboSklad IS NULL),0.)     ),4)   as NUMERIC(19,6)   ) < 1.2 THEN 16759295 END AS INT) 
