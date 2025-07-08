@@ -1,0 +1,1 @@
+(SELECT ISNULL(tkz.hmotnost,0) * tss.Mnozstvi  FROM TabStavSkladu tss WITH(NOLOCK)  LEFT OUTER JOIN TabKmenZbozi tkz WITH(NOLOCK) ON tkz.ID=tss.IDKmenZbozi  WHERE tss.ID=TabStavSkladu.ID AND tss.IDSklad=:__SKLAD)
