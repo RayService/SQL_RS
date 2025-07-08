@@ -1,0 +1,1 @@
+(  LEFT(TabVyrCS.Nazev1,8)+N' '+SUBSTRING(TabVyrCS.Nazev1,9,9)+N' '+ case         when len(TabVyrCS.Nazev1)>17 then right(TabVyrCS.Nazev1,LEN(TabVyrCS.Nazev1)-17)        else N''        end  )
