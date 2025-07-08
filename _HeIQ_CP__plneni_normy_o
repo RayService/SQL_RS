@@ -1,0 +1,1 @@
+CASE WHEN  ((CASE WHEN ISNULL(TabPrikazMzdyAZmetky.Sk_cas_H,0) = 0 OR ISNULL(TabPrikazMzdyAZmetky.Nor_cas_Obsluhy,0) = 0 THEN 100 ELSE 100 * TabPrikazMzdyAZmetky.Nor_cas_H / TabPrikazMzdyAZmetky.Sk_cas_H END)< 99) Then  1 else 2 end
