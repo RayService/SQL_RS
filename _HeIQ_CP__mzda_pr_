@@ -1,0 +1,1 @@
+CASE WHEN #TabPorPS.Mzda_P_Pl=0 THEN NULL WHEN   (((#TabPorPS.Mzda_P/#TabPorPS.Mzda_P_Pl)*100)<=100) Then  2 else 1 end
