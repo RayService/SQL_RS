@@ -1,0 +1,1 @@
+(SELECT   ((PZ.JCBezDaniKc/PZ.JCEvidSN )-1)* 100 FROM TabPohybyZbozi PZ WITH(NOLOCK) WHERE PZ.DruhPohybuZbo IN (13,14) AND PZ.JCEvidSN <> 0 AND PZ.ID = TabPohybyZbozi.ID)
