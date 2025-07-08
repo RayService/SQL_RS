@@ -1,0 +1,1 @@
+CAST(CASE WHEN EXISTS  (SELECT *  FROM TabPohybyZbozi tpz WITH(NOLOCK)  LEFT OUTER JOIN TabDokladyZbozi tdz WITH(NOLOCK) ON tdz.ID=tpz.IDDoklad  WHERE tdz.RadaDokladu IN (380,381) AND tdz.DruhPohybuZbo=11 AND tpz.ID=TabPohybyZbozi.ID)  THEN 16744448 END AS INT)    
