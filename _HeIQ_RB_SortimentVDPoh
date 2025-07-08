@@ -1,0 +1,1 @@
+CAST(CASE WHEN (SELECT KatAllTecky FROM  TabSortiment WITH(NOLOCK) WHERE TabPohybyZbozi.IDZboSklad IN (SELECT ss.ID FROM TabStavSkladu AS ss WITH(NOLOCK) WHERE ss.IDKmenZbozi IN (SELECT kz.ID FROM TabKmenZbozi kz WITH(NOLOCK) WHERE kz.IdSortiment=TabSortiment.ID))) = N'VD' THEN 65280 END AS INT)
