@@ -1,0 +1,1 @@
+CAST(COALESCE((SELECT NULLIF(_popistavu5_zad,0) FROM TabPrikaz_EXT WITH(NOLOCK) WHERE ID = TabPrikaz.ID),(CASE WHEN EXISTS(SELECT * FROM TabPrPostup WITH(NOLOCK) WHERE IDOdchylkyDo IS NULL AND IDPrikaz = TabPrikaz.ID AND prednastaveno=1 AND Odvadeci = 1 AND Kusy_zive = 0.) THEN 1 ELSE 0 END)) as BIT)
