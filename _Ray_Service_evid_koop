@@ -1,0 +1,1 @@
+(CAST (CASE WHEN EXISTS(SELECT Typ FROM TabPrPostup WITH(NOLOCK)  WHERE (TabPrPostup.IDPrikaz = TabPrikaz.ID) AND (TabPrPostup.Typ = 2)) THEN 1   ELSE 0 END AS BIT))
