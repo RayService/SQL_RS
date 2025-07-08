@@ -1,0 +1,1 @@
+(  SELECT  ISNULL(tss.Prumer,0)  FROM TabPlan tp WITH(NOLOCK)  LEFT OUTER JOIN TabStavSkladu tss WITH(NOLOCK) ON tss.IDKmenZbozi=tp.IDTabKmen AND tss.IDSklad='200'  WHERE tp.InterniZaznam=0 AND tp.ID=TabPlan.ID  )
