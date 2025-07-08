@@ -1,0 +1,1 @@
+(SELECT ABS(SUM(PU.Mnozstvi)) FROM Gatema_PohybUmisteni PU WITH(NOLOCK) WHERE PU.IDPohZbo=TabPohybyZbozi.ID  )
