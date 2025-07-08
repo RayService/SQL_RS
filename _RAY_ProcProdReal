@@ -1,0 +1,1 @@
+(((SELECT TabPohybyZbozi.JCbezDaniKcPoS FROM #TabPorPS PPS   INNER JOIN TabPrikaz WITH(NOLOCK) ON Tabprikaz.ID = PPS.IDPrikaz  INNER JOIN TabPohybyZbozi WITH(NOLOCK) ON  TabPohybyZbozi.ID = TabPrikaz. IDRezervace  WHERE PPS.ID = #TabPorPS.ID )  *  (SELECT kusy_odved FROM TabPrikaz WITH(NOLOCK) WHERE   ID=#TabPorPS.IDPrikaz)  -  #TabPorPS.Celkem)/#TabPorPS.Celkem)*100
