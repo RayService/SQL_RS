@@ -1,0 +1,1 @@
+(SELECT count(*) FROM TabKontaktJednani WITH(NOLOCK) WHERE DatumJednaniOd <= (SELECT DatDoKJ FROM  RAY_RozsDatKJ_JOC)  AND    DatumJednaniOd >= (SELECT DatOdKJ FROM RAY_RozsDatKJ_JOC) AND TabKontaktJednani.CisloOrg = TabCisOrg.CisloOrg )
