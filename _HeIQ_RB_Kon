@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabKmenZbozi.SkupZbo like N'5%' THEN 65280 END AS INT)  
