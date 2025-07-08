@@ -1,0 +1,1 @@
+rtrim(TabCZavad.kod)+'-'+left(TabCZavad.nazev,10)
