@@ -1,0 +1,2 @@
+CAST(CASE WHEN EXISTS(SELECT * FROM TabUzivOzn WHERE TabName = N'TabUzivAtr' AND Uzivatel = SUSER_SNAME() AND IDx = TabUzivAtr.ID) THEN 1 ELSE 0 END AS BIT)
+  
