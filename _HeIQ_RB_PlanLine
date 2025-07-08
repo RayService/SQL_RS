@@ -1,0 +1,1 @@
+CAST (CASE WHEN (SELECT Rada FROM TabPlan WITH(NOLOCK) WHERE TabPrikaz.IDPlan=TabPlan.ID) LIKE N'plan_quic%'  THEN 8454016   END AS INT)
