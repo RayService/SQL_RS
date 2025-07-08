@@ -1,0 +1,1 @@
+(SELECT K.RegCis FROM TabKmenZbozi K WITH(NOLOCK) WHERE TabPrKVazby.nizsi=K.ID)
