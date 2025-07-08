@@ -1,0 +1,1 @@
+(CAST (  CASE  WHEN   (SELECT COUNT(*) FROM Gatema_SDScanData Pol WITH(NOLOCK) INNER JOIN Gatema_SDDoklady Hla WITH(NOLOCK) ON Hla.ID=Pol.IDDokladSD WHERE IDInvItem=TabInvItem.ID AND Hla.AutorGener IS NOT NULL) > 0THEN 1  ELSE 0  END  AS BIT)  )
