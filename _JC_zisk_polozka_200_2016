@@ -1,0 +1,1 @@
+TabPohybyZbozi.JCbezDaniKcPoS-  ( SELECT (PZ.JCevid - ISNULL(SNV.Celkem,0))FROM TabPohybyZbozi PZ WITH(NOLOCK) JOIN TabPohybySNView SNV WITH(NOLOCK) ON PZ.ID = SNV.ID  WHERE TabPohybyZbozi.ID = PZ.ID/* (TabPohybyZbozi.JCevid) */)*1.26  
