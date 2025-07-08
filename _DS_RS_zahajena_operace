@@ -1,0 +1,1 @@
+(  CAST ((CASE WHEN EXISTS (  SELECT tpp.ID  FROM Gatema_TermETH gte WITH(NOLOCK)  LEFT OUTER JOIN TabPrPostup tpp WITH(NOLOCK) ON tpp.IDPrikaz=gte.IDPrikaz AND tpp.Doklad=gte.Doklad AND tpp.IDOdchylkyDo IS NULL  WHERE ISNULL(IDKolegy,-1)<0 AND tpp.ID=TabPrPostup.ID) THEN 1 ELSE 0 END) AS BIT)  )
