@@ -1,0 +1,1 @@
+CAST (CASE WHEN EXISTS(select Stredisko From TabCisZam WITH(NOLOCK)  where  (TabDokladyZbozi.Autor = TabCisZam.LoginId AND TabCisZam.Stredisko='200')) THEN 1 ELSE 0 END AS BIT)  
