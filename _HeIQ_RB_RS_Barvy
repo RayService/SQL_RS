@@ -1,0 +1,1 @@
+CAST(CASE WHEN EXISTS (SELECT * FROM TabPohybyZbozi WITH(NOLOCK) WHERE TabPohybyZbozi.IDDoklad = TabDokladyZbozi.ID AND SkupZbo like N'4%' AND JCbezDaniKC > 100)  THEN 255  ELSE NULL   END AS INT)
