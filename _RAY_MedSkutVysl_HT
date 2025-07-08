@@ -1,0 +1,1 @@
+(SELECT kusy_ciste FROM TabPrikaz PM WITH(NOLOCK) WHERE PM.ID = #TabPorPS.ID)
