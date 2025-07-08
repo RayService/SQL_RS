@@ -1,0 +1,1 @@
+(select sum(1) from asloupce where tabulka=hvw_6965AF76ED484B75B5D800E4044AD80D.tabulka)                             
