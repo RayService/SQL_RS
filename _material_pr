@@ -1,0 +1,1 @@
+CASE WHEN #TabPorPS.Mat_P_Pl=0  or #TabPorPS.Mat_P_Pl is null THEN NULL WHEN   (((#TabPorPS.Mat_P/#TabPorPS.Mat_P_Pl)*100)<=100) Then  ((#TabPorPS.Mat_P/#TabPorPS.Mat_P_Pl)*100) else 100 end
