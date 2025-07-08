@@ -1,0 +1,1 @@
+CASE WHEN #TabPorPS.NakladyPrac_P_Pl=0  or #TabPorPS.NakladyPrac_P_Pl is null THEN NULL WHEN   (((#TabPorPS.NakladyPrac_P/#TabPorPS.NakladyPrac_P_Pl)*100)<=100) Then  ((#TabPorPS.NakladyPrac_P/#TabPorPS.NakladyPrac_P_Pl)*100) else 100 end
