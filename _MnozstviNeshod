@@ -1,0 +1,1 @@
+(SELECT SUM(SU.Mnozstvi)   FROM Gatema_StavUmisteni SU WITH(NOLOCK)  INNER JOIN TabUmisteni U WITH(NOLOCK) ON U.ID=SU.IDUmisteni  WHERE SU.IDStavSkladu=TabStavSkladu.ID AND U.ID=(SELECT TOP 1 Konf.IDUmisteniNeshod FROM Tab_SDMater_Konfig Konf)  )
