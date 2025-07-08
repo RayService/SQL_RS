@@ -1,0 +1,1 @@
+CAST(CASE WHEN (SELECT Upozorneni FROM TabKmenZbozi WITH(NOLOCK) WHERE TabKmenZbozi.ID=TabStavSkladu.IDKmenZbozi) LIKE '%kalk%' THEN 16759295 END AS INT)   
