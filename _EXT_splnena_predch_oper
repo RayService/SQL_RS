@@ -1,0 +1,1 @@
+(CONVERT(BIT,CASE WHEN (((TabPrPostup.Kusy_zad-TabPrPostup.KusyPredOperaci) = 0 OR TabPrPostup.Splneno = 1)) THEN 1 ELSE 0 END))
