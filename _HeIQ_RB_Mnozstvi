@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabStavSkladu.MnozstviDispo>0 THEN 12381629 WHEN TabStavSkladu.MnozstviDispo<0 THEN 12369645 END AS INT)
