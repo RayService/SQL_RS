@@ -1,0 +1,1 @@
+(SELECT (SUM(PP.Kusy_zad * (PP.TAC_S+PP.TBC_S+PP.TEC_S) / (3600.0 * PP.DavkaTPV_VO))) FROM TabPrPostup PP WITH(NOLOCK) LEFT JOIN TabCPraco WITH(NOLOCK) ON TabCPraco.ID=PP.Pracoviste  LEFT JOIN TabPrikaz P WITH(NOLOCK) ON PP.IDPrikaz=P.ID   WHERE TabCPraco.IDTabStrom=N'200'  AND P.ID=TabPrikaz.ID AND PP.IDOdchylkyDo IS NULL AND PP.prednastaveno=1)
