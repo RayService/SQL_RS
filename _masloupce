@@ -1,0 +1,1 @@
+cast((case when exists(select id from asloupce where tabulka=hvw_6965AF76ED484B75B5D800E4044AD80D.tabulka) then 1 else 0 end) as bit)
