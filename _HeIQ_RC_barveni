@@ -1,0 +1,1 @@
+CAST(CASE   WHEN hvw_PorVarKusov.mnf < 0 THEN 1  ELSE 2   END AS TINYINT)
