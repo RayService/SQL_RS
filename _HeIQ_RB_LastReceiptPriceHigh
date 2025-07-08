@@ -1,0 +1,1 @@
+(SELECT CASE   WHEN tss.Prumer/*tss_EXT._EXT_RS_LastReceiptPrice*/*1.15>tpz.JCbezDaniKC THEN 65535 ELSE NULL END AS INT  FROM TabPohybyZbozi tpz WITH(NOLOCK)  LEFT OUTER JOIN TabStavSkladu tss WITH(NOLOCK) ON tpz.IDZboSklad=tss.ID  LEFT OUTER JOIN TabStavSkladu_EXT tss_EXT WITH(NOLOCK) ON tss_EXT.ID=tss.ID  WHERE  tpz.ID=TabPohybyZbozi.ID)
