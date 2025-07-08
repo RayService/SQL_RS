@@ -1,0 +1,1 @@
+CAST(CASE   WHEN hvw_Police.ProcentoZaplneni <= 25 THEN 65280   WHEN hvw_Police.ProcentoZaplneni <= 50 THEN 65535  WHEN hvw_Police.ProcentoZaplneni <= 75 THEN 33023   WHEN hvw_Police.ProcentoZaplneni <= 90 THEN 255   WHEN hvw_Police.ProcentoZaplneni <= 100 THEN 459687   END AS INT)
