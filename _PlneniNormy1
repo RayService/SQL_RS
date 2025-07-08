@@ -1,0 +1,1 @@
+CASE WHEN hvw_MesHodMzdyVyroba.OdpracHodiny=0 OR hvw_MesHodMzdyVyroba.OdpracHodiny IS NULL   THEN NULL else (hvw_MesHodMzdyVyroba.NormaObsluhy/hvw_MesHodMzdyVyroba.OdpracHodiny*100) end
