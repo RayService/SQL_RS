@@ -1,0 +1,1 @@
+CAST( CASE WHEN (SELECT tpze._EXT_RS_SimplifiedEnterControl FROM TabPohybyZbozi_EXT tpze WITH(NOLOCK) LEFT OUTER JOIN TabPohybyZbozi tpz WITH(NOLOCK) ON tpz.ID=tpze.ID WHERE tpz.ID=TabPohybyZbozi.ID)=1  THEN 32768-- 51712  ELSE 0   END AS INT)
