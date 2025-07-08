@@ -1,0 +1,1 @@
+(SUBSTRING(REPLACE(SUBSTRING((select tt._kdevsudepouzita  from TabObecnyPrehled_ext tt where tt.id=TabObecnyPrehled.id),1,4000),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,4000))  
