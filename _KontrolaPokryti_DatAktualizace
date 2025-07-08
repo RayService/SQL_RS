@@ -1,0 +1,1 @@
+(  SELECT MAX(VVE._KontrolaPokryti_DatAktualizace)   FROM TabPlanPrKVazby VV WITH(NOLOCK)  INNER JOIN TabPlanPrKVazby_EXT VVE WITH(NOLOCK) ON VV.ID = VVE.ID  WHERE VV.IDPlan = TabPlan.ID  )  
