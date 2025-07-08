@@ -1,0 +1,1 @@
+(SELECT CASE WHEN EXISTS(SELECT * FROM TabPrikazNaOpravu PNO8 WITH(NOLOCK) WHERE PNO8.IDPrikaz=TabPrikaz.ID)  OR EXISTS(SELECT * FROM TabPrikazMzdyAZmetky PNO9 WITH(NOLOCK) WHERE PNO9.IDPrikaz = TabPrikaz.ID AND (PNO9.kusy_zmet_opr > 0 OR PNO9.kusy_zmet_opr_IO > 0 OR PNO9.kusy_zmet_neopr > 0)) THEN 4210816 ELSE NULL END AS INT)
