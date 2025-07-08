@@ -1,0 +1,1 @@
+(  SELECT CONVERT(BIT, (CASE WHEN EXISTS (  SELECT tdz.ID  FROM TabDokladyZbozi tdz WITH(NOLOCK)  JOIN TabZakazka tz WITH(NOLOCK) ON tz.CisloZakazky = tdz.CisloZakazky  WHERE ((tz.ID=TabZakazka.ID)AND(tdz.PoradoveCislo>=0)AND(tdz.DruhPohybuZbo=9)AND(tdz.IDSklad LIKE N'%200%'))) THEN 1 ELSE 0 END))  )  
