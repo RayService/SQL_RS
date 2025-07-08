@@ -1,0 +1,1 @@
+(SELECT TOP 1 DatumJednaniDo FROM TabKontaktJednani WITH(NOLOCK) WHERE DatumJednaniDo IS NOT NULL AND TabKontaktJednani.CisloOrg =TabCisOrg.CisloOrg ORDER BY DatumJednaniDo DESC)
