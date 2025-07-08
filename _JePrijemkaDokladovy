@@ -1,0 +1,1 @@
+CAST(CASE WHEN EXISTS(SELECT * FROM TabDokladyZbozi PD WITH(NOLOCK) WHERE PD.NavaznyDoklad = TabDokladyZbozi.ID AND PD.DruhPohybuZbo = 0) THEN 1 ELSE 0 END as BIT)
