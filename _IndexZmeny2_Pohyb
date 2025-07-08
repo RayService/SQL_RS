@@ -1,0 +1,1 @@
+(SELECT TabDavka.IndexZmeny2 FROM TabDavka WITH(NOLOCK)  INNER JOIN TabStavSkladu WITH(NOLOCK) ON TabStavSkladu.IDKmenZbozi = TabDavka.IDDilce  WHERE TabPohybyZbozi.IDZboSklad = TabStavSkladu.ID AND ZmenaDo IS NULL AND ZmenaOd IS NOT NULL)
