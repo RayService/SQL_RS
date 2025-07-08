@@ -1,0 +1,1 @@
+(SELECT (mat + koop + mzda) FROM #TabPorPS PPS WHERE PPS.ID = #TabPorPS.ID)
