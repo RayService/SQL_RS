@@ -1,0 +1,1 @@
+CAST(CASE   WHEN (SELECT U.DatumZahajeniOp FROM TabPrikazMzdyAZmetky U WITH(NOLOCK) WHERE U.ID=TabPrikazMzdyAZmetky.ID) IS NOT NULL THEN 1  ELSE   NULL  END AS INT)
