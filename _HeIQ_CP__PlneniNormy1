@@ -1,0 +1,1 @@
+CASE WHEN hvw_MesHodMzdyVyroba.OdpracHodiny=0 OR hvw_MesHodMzdyVyroba.OdpracHodiny IS NULL   THEN NULL WHEN   (hvw_MesHodMzdyVyroba.NormaObsluhy/hvw_MesHodMzdyVyroba.OdpracHodiny)*100 >= 95 AND (hvw_MesHodMzdyVyroba.NormaObsluhy/hvw_MesHodMzdyVyroba.OdpracHodiny)*100 <= 130  THEN 2  ELSE 1 end
