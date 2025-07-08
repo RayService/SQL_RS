@@ -1,0 +1,1 @@
+CAST(CASE WHEN (SELECT _EXT_RayService_lezak_oznaceni FROM TabStavSkladu_EXT WITH(NOLOCK) WHERE ID=TabStavSkladu.ID) = 1 THEN 12308991 END AS INT)
