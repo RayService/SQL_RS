@@ -1,0 +1,1 @@
+CAST(CASE WHEN (SELECT tkz.Blokovano FROM TabKmenZbozi tkz WITH(NOLOCK) WHERE tkz.ID=TabKmenZbozi.ID) = 1 THEN 12615935 END AS INT)
