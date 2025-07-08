@@ -1,0 +1,1 @@
+CASE WHEN (hvw_Gatema_SDDoklady.DobaVyskladneni>0) THEN (hvw_Gatema_SDDoklady.Suma/hvw_Gatema_SDDoklady.DobaVyskladneni) END
