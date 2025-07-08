@@ -1,0 +1,1 @@
+CAST(CASE WHEN EXISTS (SELECT*  FROM TabPohybyZbozi    INNER JOIN TabStavSkladu SS WITH(NOLOCK) ON SS.ID = TabPohybyZbozi.IDZboSklad  INNER JOIN TabKmenZbozi KZ WITH(NOLOCK) ON KZ.ID = SS.IDKmenZbozi  INNER JOIN TabKmenZbozi_EXT PZE WITH(NOLOCK) ON PZE.ID = KZ.ID    WHERE PZE._elektrostatika = 1 AND TabDokladyZbozi.ID = TabPohybyZbozi.IDDoklad )  THEN 1 ELSE 0 END AS BIT)
