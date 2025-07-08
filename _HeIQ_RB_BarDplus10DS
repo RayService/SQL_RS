@@ -1,0 +1,1 @@
+CAST(CASE   WHEN (SELECT U.Plan_zadani FROM TabPrikaz U WHERE U.ID=TabPrikaz.ID) < GetDate() +11   THEN 33023    END AS INT)
