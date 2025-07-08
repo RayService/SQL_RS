@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabKmenZbozi.DodaciLhuta = 0 THEN 4524770 END AS INT)  
