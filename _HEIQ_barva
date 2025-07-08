@@ -1,0 +1,1 @@
+CAST(CASE WHEN (TabCisOrg.Saldo) > 0 THEN 3 END AS TINYINT)
