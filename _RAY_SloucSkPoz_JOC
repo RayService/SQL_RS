@@ -1,0 +1,1 @@
+(SELECT   ISNULL(KZE._sklad,'') +' '+ ISNULL (KZE._sklad_regal,'') +' '+ISNULL (KZE._sklad_misto,'')  FROM TabKmenZbozi_EXT KZE WITH(NOLOCK) WHERE KZE.ID =TabKmenZbozi.ID )      
