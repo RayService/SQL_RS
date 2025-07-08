@@ -1,0 +1,1 @@
+(SELECT Kategorie FROM  TabKatVyrDokum WITH(NOLOCK)  WHERE TabKatVyrDokum.ID=TabVyrDokum.IDKategorie)
