@@ -1,0 +1,1 @@
+cast((case   when (TabPohybyZbozi.DruhPohybuZbo=13) AND (TabPohybyZbozi.CCbezDaniKcPoS*100)>0 then (TabPohybyZbozi.CCbezDaniKcPoS-TabPohybyZbozi.CCevidSN)/TabPohybyZbozi.CCbezDaniKcPoS*100  else 0.00  end  ) as numeric(19,2))
