@@ -1,0 +1,1 @@
+(  SELECT tpvre._EXT_RAY_value1 + tpvre._EXT_RAY_value2 + tpvre._EXT_RAY_value3 + tpvre._EXT_RAY_value4 + tpvre._EXT_RAY_value5 AS soucet  FROM TabPersVyberRizeni tpvr WITH(NOLOCK)  JOIN TabPersVyberRizeni_EXT tpvre WITH(NOLOCK) ON tpvre.ID = tpvr.ID  WHERE tpvre.ID = :ID  )
