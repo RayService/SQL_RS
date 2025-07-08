@@ -1,0 +1,1 @@
+(SELECT SUM(IU.MnozstviInv) FROM Gatema_InvItemUmisteni IU WHERE IU.IDInvItem=TabInvItem.ID)
