@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabKmenZbozi.material=1 AND TabKmenZbozi.ShodaId=1 AND ISNULL(TabKmenZbozi.Vykres,N'') <> N'' THEN CASE WHEN LTRIM(RTRIM(TabKmenZbozi.Vykres)) <> ISNULL((SELECT ISNULL(VExt._cisloVykresu,N'') FROM TabKmenZbozi_EXT VExt WITH(NOLOCK) WHERE VExt.ID = TabKmenZbozi.ID),N'') THEN 255 ELSE NULL END  ELSE NULL END as INT)
