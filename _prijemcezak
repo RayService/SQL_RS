@@ -1,0 +1,1 @@
+cast((SELECT  Nazev FROM TabCisOrg WITH(NOLOCK)  WHERE (TabCisOrg.CisloOrg=TabZakazka.Prijemce)) as varchar(30))
