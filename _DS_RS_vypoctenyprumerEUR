@@ -1,0 +1,1 @@
+(  SELECT tss.Prumer /   (SELECT TOP 1 tl.Kurz  FROM TabKurzList tl WITH(NOLOCK)  WHERE tl.Mena='EUR'  ORDER BY tl.Datum DESC)  FROM TabStavSkladu tss WITH(NOLOCK)  WHERE tss.ID=TabStavSkladu.ID  )
