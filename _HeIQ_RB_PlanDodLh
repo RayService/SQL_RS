@@ -1,0 +1,1 @@
+CAST(CASE WHEN (SELECT U.datum_X FROM TabPlan U WHERE U.ID=TabPlan.ID) <   GetDate()   +  (SELECT DodaciLhuta FROM TabKmenZbozi U WHERE U.ID=TabPlan.IDTabKmen)  +10  THEN 2659583   END AS INT)  
