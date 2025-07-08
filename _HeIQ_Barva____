@@ -1,0 +1,1 @@
+CAST(CASE WHEN   (SELECT Count(*) FROM TabPrikaz AS t WITH(NOLOCK) WHERE t.ID = TabPrikaz.ID AND StavPrikazu = 40) > 0  THEN 1 END AS TINYINT)  
