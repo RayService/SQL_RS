@@ -1,0 +1,1 @@
+(  SELECT SUM(tpp.MeziOperCas_H)+SUM((tpp.Kusy_zad * tpp.TAC_S / (3600.0 * tpp.DavkaTPV_VO)))  FROM TabPrPostup AS tpp WITH(NOLOCK)  WHERE tpp.IDPrikaz = TabPrikaz.ID  )
