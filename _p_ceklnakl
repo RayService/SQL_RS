@@ -1,0 +1,1 @@
+(CASE WHEN #TabPorPS.Celkem_P_Pl=0 THEN NULL WHEN #TabPorPS.Celkem_P > #TabPorPS.Celkem_P_Pl THEN ROUND((#TabPorPS.Celkem_P - #TabPorPS.Celkem_P_Pl)/(#TabPorPS.Celkem_P_Pl/100),0) ELSE null END)
