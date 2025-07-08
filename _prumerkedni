@@ -1,0 +1,1 @@
+isnull((case when hvw_F0stavskladukedni.mnozstvikedni=0 then 0 else hvw_F0stavskladukedni.stavplusdsnkedni/hvw_F0stavskladukedni.mnozstvikedni end),0)   
