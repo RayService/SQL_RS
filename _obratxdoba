@@ -1,0 +1,1 @@
+round((select _rnobratsklsn*_rndobaobratusklsn from TabStavSkladu_ext tse WITH(NOLOCK) where tse.id=TabStavSkladu.id),0)
