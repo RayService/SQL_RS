@@ -1,0 +1,1 @@
+CAST ( CASE   WHEN  EXISTS (SELECT * FROM TabPohybyZbozi PZ WITH(NOLOCK) WHERE PZ.RegCis = '00109' AND PZ.SkupZbo = '900' AND PZ.IDDoklad =TabDokladyZbozi.ID) THEN 1  ELSE 0    END as BIT)
