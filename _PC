@@ -1,0 +1,1 @@
+(SELECT nc.CenaKC from TabNC nc WITH(NOLOCK)  WHERE nc.IDKmenZbozi=TabSlZbo.IdZbo and nc.CenovaUroven=1)*(100-TabSlZbo.sleva)/100  
