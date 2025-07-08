@@ -1,0 +1,1 @@
+case when     TabPohybyZbozi.Mnozstvi>(select max(vcs.MnozstviDispo) from TabVyrCS vcs where vcs.IDStavSkladu=TabPohybyZbozi.IDZboSklad) and    TabPohybyZbozi.DruhPohybuZbo in (9,2,4)  then -2 else null end
