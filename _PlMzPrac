@@ -1,0 +1,1 @@
+(  SELECT  tpmz.Sk_cas_Obsluhy_H*ISNULL(tcpoe._TarPrac,0)  FROM TabPrikazMzdyAZmetky tpmz WITH(NOLOCK)    LEFT OUTER JOIN TabCPraco tcpo WITH(NOLOCK) ON tpmz.IDPracoviste=tcpo.ID    LEFT OUTER JOIN TabCPraco_EXT tcpoe WITH(NOLOCK) ON tcpoe.ID=tcpo.ID  WHERE  tpmz.ID=TabPrikazMzdyAZmetky.ID)  /*TabPrikazMzdyAZmetky.Sk_cas_Obsluhy_H*/
