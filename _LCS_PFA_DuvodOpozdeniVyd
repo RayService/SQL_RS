@@ -1,0 +1,1 @@
+(  SELECT TPZE._LCS_PFA_DuvodOpozdeniExp FROM TabPohybyZbozi TPZ WITH(NOLOCK)  JOIN TabPohybyZbozi_Ext TPZE WITH(NOLOCK) ON TPZE.ID=TPZ.ID  WHERE TPZ.ID=TabPohybyZbozi.IDOldPolozka    )
