@@ -1,0 +1,1 @@
+CASE WHEN hvw_HodnoceniZakazek.NakladyPrac_P_Pl=0 THEN NULL WHEN   (((hvw_HodnoceniZakazek.NakladyPrac_P/hvw_HodnoceniZakazek.NakladyPrac_P_Pl)*100)-100>0) Then  ((hvw_HodnoceniZakazek.NakladyPrac_P/hvw_HodnoceniZakazek.NakladyPrac_P_Pl)*100)-100 else null end
