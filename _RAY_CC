@@ -1,0 +1,1 @@
+(SELECT (mzda*5.37) +(mat*0.15) + (koop*0.15) FROM #TabPorPS PPS WHERE PPS.ID = #TabPorPS.ID)
