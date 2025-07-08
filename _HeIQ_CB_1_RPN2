@@ -1,0 +1,1 @@
+CASE WHEN (TabFMEAPricinyVady.RPN2>(SELECT RPNKriticka FROM TabQMSParametry)) THEN 1        WHEN (TabFMEAPricinyVady.RPN2<=(SELECT RPNKriticka FROM TabQMSParametry)) THEN 2  ELSE NULL END
