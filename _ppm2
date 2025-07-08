@@ -1,0 +1,1 @@
+(SELECT SUM(PZ.Mnozstvi)  FROM TabPohybyZbozi PZ WITH(NOLOCK) LEFT JOIN TabDokladyZbozi DZ WITH(NOLOCK) ON DZ.ID =PZ.IDDoklad   WHERE DZ.CisloOrg =TabCisOrg.CisloOrg AND TabCisOrg.JeOdberatel = 1  AND PZ.SkupZbo IN ('800', '850') AND DZ.RadaDokladu IN ('655','656','657') AND DZ.Realizovano= 1 AND DZ.DruhPohybuZbo IN ( 2,3,4)  AND DZ.Datrealizace> GETDATE()-365)  
