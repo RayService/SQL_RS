@@ -1,0 +1,1 @@
+(SELECT SUM(PZKR.mzda) FROM TabPohybyZbKalkRoz PZKR WITH(NOLOCK)  INNER JOIN TabPohybyZbozi PZ WITH(NOLOCK) ON PZKR.IDPohyb = PZ.IDOldPolozka  WHERE PZ.IDDoklad = TabDokladyZbozi.ID AND TabDokladyZbozi.DruhPohybuZbo=13)
