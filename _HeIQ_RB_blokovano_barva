@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabParametryKmeneZbozi.BlokovanoProVyrobu>0 THEN 65280 WHEN TabParametryKmeneZbozi.BlokovanoProVyrobu<0 THEN 255 END AS INT)
