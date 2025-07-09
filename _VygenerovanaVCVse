@@ -1,0 +1,1 @@
+CAST (CASE WHEN (TabPohybyZbozi.Mnozstvi<=(SELECT ISNULL(SUM(Mnozstvi), 0) FROM TabVyrCP WHERE IDPolozkaDokladu=TabPohybyZbozi.ID)) THEN 1 ELSE 0 END AS BIT)
