@@ -1,0 +1,1 @@
+((  (TabPrPostup.TAC_Obsluhy_H * TabPrPostup.Kusy_pozadovane)  +  TabPrPostup.TBC_Obsluhy_H)  -  (SELECT ISNULL(SUM(MZ.Sk_cas_H),0) FROM TabPrikazMzdyAZmetky MZ WITH(NOLOCK) WHERE   MZ.IDPrikaz=TabPrPostup.IDprikaz    AND  MZ.DokladPrPostup=TabPrPostup.Doklad   AND   MZ.AltPrPostup=TabPrPostup.Alt    AND MZ.stav=1)  )
