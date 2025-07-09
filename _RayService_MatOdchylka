@@ -1,0 +1,1 @@
+(CASE WHEN #TabPorPS.mat_Pl=0  or #TabPorPS.mat_Pl is null THEN NULL ELSE  (((#TabPorPS.mat+#TabPorPS.koop)-#TabPorPS.mat_Pl)/(#TabPorPS.mat_Pl)*100)  END)      
