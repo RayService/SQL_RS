@@ -1,0 +1,1 @@
+CONVERT(VARCHAR(30), (SELECT UAPH.hodnota FROM TabUzivAtrPracHod UAPH WHERE UAPH.IDUzivAtrPrac=5 AND UAPH.IDMzdyAZmetku=TabPrikazMzdyAZmetky.ID))
