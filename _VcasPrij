@@ -1,0 +1,1 @@
+-(SELECT DATEDIFF(day,  ((    SELECT Plan_ukonceni_X FROM TabPrikaz WITH(NOLOCK) WHERE ID=TabDokladyZbozi.IDPrikaz    )), TabDokladyZbozi.DatPorizeniSkut))
