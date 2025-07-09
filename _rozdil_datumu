@@ -1,0 +1,1 @@
+(SELECT DATEDIFF(day, TabPrikaz.Plan_Ukonceni, (SELECT TabPohybyZbozi.PotvrzDatDod FROM TabPohybyZbozi WITH(NOLOCK)  WHERE TabPohybyZbozi.ID=TabPrikaz.IDRezervace)))  
