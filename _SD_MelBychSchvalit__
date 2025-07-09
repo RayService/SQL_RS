@@ -1,0 +1,1 @@
+CAST(CASE WHEN SUSER_SNAME() IN (SELECT LoginName FROM dbo.hfx_SD_PouzeAktualniSchvalovateleUrovne(TabKoopObj.ID, 3)) THEN 1 ELSE 0 END AS BIT)
