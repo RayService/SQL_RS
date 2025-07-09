@@ -1,0 +1,1 @@
+(SELECT TOP 1 Datum FROM Temp_ZmenovyLOG WHERE IdVTab = TabPrikaz.ID  ORDER BY Datum DESC)
