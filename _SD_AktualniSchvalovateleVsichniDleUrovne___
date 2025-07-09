@@ -1,0 +1,1 @@
+CAST(SUBSTRING(dbo.hfx_SD_VsichniAktualniSchvalovateleUrovne_CommaSeparated(TabDosleObjH02.ID, 2), 1, 255) AS NVARCHAR(255))
