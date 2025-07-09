@@ -1,0 +1,1 @@
+(SELECT substring(cast(_sappoznamkaktr as nvarchar),1,255) FROM TabObecnyPrehled_EXT WHERE ID=TabObecnyPrehled.ID)
