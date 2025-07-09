@@ -1,0 +1,1 @@
+(SELECT _saprychlostsvazbou-_saprychlostsam  FROM TabObecnaVazba_EXT WHERE ID=TabObecnaVazba.ID)
