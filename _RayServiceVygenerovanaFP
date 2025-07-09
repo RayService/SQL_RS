@@ -1,0 +1,1 @@
+(SELECT CAST(ISNULL(ic_e._RayServiceVygenerovanaFPId, 0) AS BIT) FROM dbo.TabICCSVyp ic WITH(NOLOCK) INNER JOIN dbo.TabICCSVyp_Ext ic_e WITH(NOLOCK) ON ic.id = ic_e.id WHERE ic.Id = TabICCSVyp.ID)
