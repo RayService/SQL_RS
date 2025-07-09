@@ -1,0 +1,1 @@
+(  SELECT SUM((tpp.Kusy_zad*tpp.tac_H)+tpp.TBC_H+tpp.TEC_H)  FROM TabPrPostup tpp  WHERE tpp.IDPrikaz = TabPrikaz.ID AND tpp.IDOdchylkyDO IS NULL AND tpp.prednastaveno=1  )  
