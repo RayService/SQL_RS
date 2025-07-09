@@ -1,0 +1,1 @@
+(  SELECT CAST(STUFF(   (SELECT N',' + D.NavaznaObjednavka   FROM TabDokladyZbozi D WITH(NOLOCK)   WHERE D.ID IN (SELECT DISTINCT IDDoklad      FROM [dbo].[hfx_ReseniHeO_DokladyPredchozi](TabDokladyZbozi.ID,TabDokladyZbozi.ID,0,5)      WHERE DruhPohybuZbo = 9)   AND D.NavaznaObjednavka <> N''   FOR XML PATH(''))   ,1,1,N'') as NVARCHAR(255))  )
