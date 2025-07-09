@@ -1,0 +1,1 @@
+(case   when TabDokladyZbozi.DruhPohybuZbo=13 then TabDokladyZbozi.SumaKcPoZaoBezZal-TabDokladyZbozi.EcCelkemDokl  else 0.00  end  )
