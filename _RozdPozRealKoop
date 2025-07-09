@@ -1,0 +1,1 @@
+(SELECT DATEDIFF(day, TabKoopObj.PozadTerDod,TabKoopObj.DatRealizace))  
