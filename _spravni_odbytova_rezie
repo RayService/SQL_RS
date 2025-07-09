@@ -1,0 +1,1 @@
+((SELECT CASE WHEN TabDokladyZbozi.EcCelkemDokl<>0 THEN   (TabDokladyZbozi.EcCelkemDokl) * 0.26 ELSE 0 END))
