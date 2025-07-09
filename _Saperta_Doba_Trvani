@@ -1,0 +1,1 @@
+datediff(second, hvw_F2EE8FB2536C4FE394FA9212C18641F3.transaction_begin_time,(select max(ttr.casspusteni) from saperta_tab_transakce ttr where ttr.transaction_id=hvw_F2EE8FB2536C4FE394FA9212C18641F3.transaction_id))
