@@ -1,0 +1,1 @@
+CONVERT(BIT, (SELECT UAPH.hodnota FROM TabUzivAtrPracHod UAPH WHERE UAPH.IDUzivAtrPrac=4 AND UAPH.IDMzdyAZmetku=TabPrikazMzdyAZmetky.ID))
