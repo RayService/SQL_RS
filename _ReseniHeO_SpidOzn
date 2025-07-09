@@ -1,0 +1,1 @@
+CAST(CASE WHEN EXISTS(SELECT * FROM Tabx_ReseniHeO_SpidOzn WHERE TabName = N'TabTypPostup' AND SPID = @@SPID AND IDTab = TabTypPostup.ID) THEN 1 ELSE 0 END as BIT)
