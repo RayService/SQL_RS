@@ -1,0 +1,1 @@
+(SELECT Spojeni FROM TabKontakty WITH(NOLOCK)  WHERE IDOrg=TabVztahOrgKOs.IDOrg AND Prednastaveno=1 AND Druh=2 AND IDVztahKOsOrg=TabVztahOrgKOs.ID)
