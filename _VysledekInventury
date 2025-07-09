@@ -1,0 +1,1 @@
+    (  SELECT top 1 ick.Vysledek  from TabMaInv i WITH(NOLOCK)   inner join TabMaInvCK ick WITH(NOLOCK) on ick.IdMaInv=i.Id  where ick.IdMaj=TabMaKar.Id  order by i.DatumInventury desc  )
