@@ -1,0 +1,1 @@
+(select (SUBSTRING(REPLACE(SUBSTRING(Tope.[_sappoznamkaktr],1,255),(NCHAR(13) + NCHAR(10)),NCHAR(32)),1,255)) from TabObecnyPrehled_ext tope where tope.id=TabObecnyPrehled.id)
