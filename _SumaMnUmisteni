@@ -1,0 +1,1 @@
+(SELECT ISNULL(SUM(SU.Mnozstvi), 0) FROM Gatema_StavUmisteni SU WITH(NOLOCK) WHERE SU.IDVyrCis=TabVyrCS.ID)
