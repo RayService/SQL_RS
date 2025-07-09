@@ -1,0 +1,1 @@
+(SELECT DATEDIFF(day, TabPrikaz.zadani_X, ((SELECT _PuvodnePlanovaneZadani FROM TabPrikaz_EXT WITH(NOLOCK) WHERE ID=TabPrikaz.ID))))
