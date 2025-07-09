@@ -1,0 +1,1 @@
+CASE WHEN TabPrPostup.typ = 0 THEN SUBSTRING(TabPrPostup.nazev, 1, CHARINDEX(N' ',TabPrPostup.nazev)) END
