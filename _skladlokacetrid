@@ -1,0 +1,1 @@
+(SELECT  KZE._sklad + KZE._sklad_regal + KZE._sklad_misto    FROM TabKmenZbozi KZ WITH(NOLOCK)   LEFT OUTER JOIN TabKmenZbozi_EXT KZE WITH(NOLOCK) ON (KZE.ID=KZ.ID)  WHERE  (KZ.ID=TabInvItem.IDKmenZbozi)  )
