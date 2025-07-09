@@ -1,0 +1,1 @@
+(SELECT ISNULL(SUM(MZ.Sk_cas_H),0) FROM TabPrikazMzdyAZmetky MZ WITH(NOLOCK) WHERE MZ.IDPrikaz=TabPrikaz.ID AND MZ.stav=1)
