@@ -1,0 +1,1 @@
+(SELECT TOP 1 BC.BarCode FROM TabBarCodeZbo BC WITH(NOLOCK) WHERE (BC.IDKmenZbo=TabKmenZbozi.ID) order by  BC.BarCode desc)  
