@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabPrikazMzdyAZmetky.TypMzdy='0' AND TabPrikazMzdyAZmetky.sk_cas_Obsluhy_H = 0 THEN  (TabPrikazMzdyAZmetky.nor_cas_Obsluhy_H)   ELSE    (TabPrikazMzdyAZmetky.sk_cas_Obsluhy_H)   END AS Numeric(19,6))  
