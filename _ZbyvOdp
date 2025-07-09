@@ -1,0 +1,1 @@
+(  (  SELECT SUM((tpp.Kusy_zad*tpp.tac_H)+tpp.TBC_H+tpp.TEC_H)  FROM TabPrPostup tpp WITH(NOLOCK)  WHERE tpp.IDPrikaz = TabPrikaz.ID AND tpp.IDOdchylkyDo IS NULL AND tpp.prednastaveno=1  )  -  (SELECT ISNULL(SUM(MZ.Sk_cas_H),0) FROM TabPrikazMzdyAZmetky MZ WITH(NOLOCK) WHERE MZ.IDPrikaz=TabPrikaz.ID AND MZ.stav=1)  )
