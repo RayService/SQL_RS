@@ -1,0 +1,1 @@
+(SELECT ISNULL(te._ZaklProBezDopravy,0)      FROM TabFormaDopravy_EXT te   WITH(NOLOCK)  WHERE te.ID=TabFormaDopravy.ID)
