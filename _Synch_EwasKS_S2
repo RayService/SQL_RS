@@ -1,0 +1,1 @@
+CAST(CASE WHEN TabDokladyZbozi.DruhPohybuZbo = 13 AND EXISTS(SELECT * FROM Tabx_SynchroLog WHERE Tab = N'TabDokladyZbozi' AND IdTab = TabDokladyZbozi.ID AND TypSynchro = 10 AND Synchro = 0) THEN  1 ELSE 0 END as BIT)
