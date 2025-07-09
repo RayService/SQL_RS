@@ -1,0 +1,1 @@
+(SELECT TOP 1 FullName FROM dbo.hfx_SD_PouzeAktualniSchvalovateleUrovne(TabDokladyZbozi.ID, 0))
