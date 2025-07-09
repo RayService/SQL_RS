@@ -1,0 +1,1 @@
+CAST(CASE WHEN EXISTS(SELECT *   FROM TabPohybyZbozi PZ     OUTER APPLY (SELECT Mnozstvi=SUM(ABS(Mnozstvi)) FROM Gatema_SDScanData Pol           LEFT OUTER JOIN Gatema_SDDoklady Hla ON Hla.ID=Pol.IDDokladSD WHERE Pol.IDPohZbo_New=PZ.ID AND Hla.TypDokladu=1100) Term   WHERE PZ.IDDoklad=TabDokladyZbozi.ID AND PZ.Mnozstvi>ISNULL(Term.Mnozstvi, 0)) THEN 0 ELSE 1 END   AS BIT)
