@@ -1,0 +1,1 @@
+cast((case when exists(select tt.id from saperta_tab_transakce tt where tt.transaction_id=hvw_F2EE8FB2536C4FE394FA9212C18641F3.transaction_id and tt.casspusteni>=  (select dateadd(second,  -(select casovyinterval from saperta_tab_paramglob) ,getdate()) ) )  then 1 else 0 end) as bit)
