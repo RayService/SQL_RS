@@ -1,0 +1,1 @@
+(SELECT ISNULL(SUM(SU.Mnozstvi),0.0) FROM hvw_Gatema_StavUmisteniAll SU WITH(NOLOCK) WHERE SU.IDStavSkladu=TabStavSkladu.ID)
