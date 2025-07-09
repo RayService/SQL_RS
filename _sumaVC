@@ -1,0 +1,1 @@
+(SELECT SUM(PVC.Mnozstvi) FROM TabVyrCP PVC WITH(NOLOCK) where PVC.IDPolozkaDokladu=TabPohybyZbozi.ID  )
