@@ -1,0 +1,1 @@
+CAST(CASE WHEN (SELECT R.ID FROM Tabx_RayService_LezakyRadky R WITH(NOLOCK)   INNER JOIN TabDokladyZbozi D WITH(NOLOCK) ON D.ID = TabPohybyZbozi.IDDoklad AND R.Rok = YEAR(D.DatRealizace) AND R.Mesic = MONTH(D.DatRealizace)  WHERE R.ID = TabPohybyZbozi.IDZboSklad) IS NOT NULL THEN 1 ELSE 0 END as BIT)
