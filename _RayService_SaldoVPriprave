@@ -1,0 +1,1 @@
+dbo.hfx_RayService_SaldoCastkaProPP(TabSaldo.Id,TabSaldo.Mena)
