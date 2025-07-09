@@ -1,0 +1,1 @@
+(select round((case when isnull(tope._sappocetzaznamutestu,0)=0 then 0 else tope._sapdobatrvaniprehledu1/tope._sappocetzaznamutestu end),3) from TabObecnyPrehled_ext tope where tope.id=TabObecnyPrehled.id)  
