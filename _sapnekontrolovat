@@ -1,0 +1,1 @@
+cast((case when TabExtKom.Typ<>0 or isnull(cast(TabExtKom.Poznamka as nvarchar),'')='' then 1 else 0 end) as bit)
