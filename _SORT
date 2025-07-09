@@ -1,0 +1,1 @@
+(SELECT E._RAYJine1  FROM TabStavSkladu SS WITH(NOLOCK) INNER JOIN TabKmenZbozi_Ext E WITH(NOLOCK) ON E.ID=SS.IDKmenZbozi WHERE SS.ID=TabPohybyZbozi.IDZboSklad)  
