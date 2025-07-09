@@ -1,0 +1,1 @@
+CAST(SUBSTRING(dbo.hfx_SD_VsechnyAktualniRoleUrovne_CommaSeparated(TabKoopObj.ID, 3), 1, 255) AS NVARCHAR(255))
