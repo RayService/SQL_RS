@@ -1,0 +1,1 @@
+(SELECT TOP 1 LoginName FROM dbo.hfx_SD_PouzeAktualniSchvalovateleUrovne(TabPokladna.ID, 4))
