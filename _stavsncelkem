@@ -1,0 +1,1 @@
+(select sum(round(isnull(stk.stavplusdsnkedni,0),2)) from hvw_F0stavskladukedni stk where stk.datum=hvw_F0stavskladukedni.datum and stk.idkmenzbozi=hvw_F0stavskladukedni.idkmenzbozi) 
