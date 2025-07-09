@@ -1,0 +1,1 @@
+CONVERT(BIT,Case when exists(select *           from Gatema_TermETH T WITH(NOLOCK) inner join TabPrPostup P WITH(NOLOCK) ON              T.Akce>0 AND              P.IDPrikaz=T.IDPrikaz AND              P.Doklad=T.Doklad AND              P.Alt=T.Alt AND              P.IDOdchylkyDo IS NULL          where P.IDPrikaz=TabPrikaz.ID) then 1 else 0 end)
