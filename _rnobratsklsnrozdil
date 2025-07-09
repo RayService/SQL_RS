@@ -1,0 +1,1 @@
+(select _rndobaobratusklsn - _rndobaobratusklsnmo from TabStavSkladu_ext tse WITH(NOLOCK) where tse.id=TabStavSkladu.id)
