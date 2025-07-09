@@ -1,0 +1,1 @@
+CASE WHEN TabDokladyZbozi.DruhPohybuZbo = 11 THEN (SELECT SUM(P.CCbezDaniKcPoS) FROM TabPohybyZbozi P WITH(NOLOCK) LEFT OUTER JOIN TabPohybyZbozi_EXT PE WITH(NOLOCK) ON P.ID = PE.ID WHERE P.IDDoklad = TabDokladyZbozi.ID AND ISNULL(PE._PrevodA,0) = 0) END
