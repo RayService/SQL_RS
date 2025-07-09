@@ -1,0 +1,1 @@
+CAST((CASE WHEN EXISTS(SELECT * FROM hvw_SDLog_Schvalovani WHERE hvw_SDLog_Schvalovani.TypDokladu = 2 AND hvw_SDLog_Schvalovani.IdDoklad = TabDosleObjH02.ID AND hvw_SDLog_Schvalovani.Autor=SUSER_SNAME()) THEN 1 ELSE 0 END) AS BIT)
